@@ -14,7 +14,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  width:500px;
+  height:500px;
+  margin:0 auto;
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin-left:-250px;
+  margin-top:-250px;
 }
 
 #nav {
