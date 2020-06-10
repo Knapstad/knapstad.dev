@@ -9,7 +9,7 @@
     <h1>{{ msg }}</h1>
     <p>
       I'm a developer and analyst based in Oslo Norway.<br>
-      <a href="https://github.com/knapstad" target="_blank" rel="noopener">Check out my stuff at Github</a>.
+      <a href="https://github.com/knapstad" target="_blank" rel="noopener">Check out my stuff at Github<img class="external" src=icons8-external-link-32.svg></a>.
     </p>
   </div>
 </template>
