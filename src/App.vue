@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <a href="https://github.com/knapstad">Github</a> |
-      <a href="https://intagram.com/bendikbaker">Instagram</a>
+      <a href="https://instagram.com/bendikbaker">Instagram</a>
     </div>
     <router-view/>
   </div>
