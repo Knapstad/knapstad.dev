@@ -29,10 +29,34 @@
 }
 
 #nav a {
+  position: relative;
   font-weight: bold;
   color: #2c3e50;
+  transition: 0.3s;
+  text-decoration: none;
+}
+#nav a:hover {
+  font-weight: bold;
+  color: #0B2740;
+  text-decoration: none;
+}
+#nav a::before {
+  content: "";
+  color: "#0B2740";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(1);
+  transition: all 0.2s ease-in-out 0.1s;
 }
 
+#nav a:hover::before {
+  visibility: visible;
+  transform: scaleX(0);
+}
 #nav a.router-link-exact-active {
   color: #42b983;
 }
