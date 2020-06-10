@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <a href="https://github.com/knapstad">Github</a> |
-      <a href="https://instagram.com/bendikbaker">Instagram</a>
+      <a href="https://github.com/knapstad">Github<img class="external" src=icons8-external-link-32.svg> </a> |
+      <a href="https://instagram.com/bendikbaker">Instagram <img class="external" src=icons8-external-link-32.svg></a>
     </div>
     <router-view/>
   </div>
@@ -35,5 +35,9 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+img.external{
+  width: 1em;
 }
 </style>
