@@ -9,7 +9,7 @@ Its intended use is as a [Google Cloud Function](https://cloud.google.com/functi
 This script with this setup will check for changes in your Google Tag Manager container and post the changes to Slack and Microsoft Teams.
 
 Slack:
-![Screenshot of Slack example](../../../dist/icons8-external-link-32.svg)
+![Screenshot of Slack example](readme-img/slack-example.png)
 
 Teams:
 ![Screenshot of Teams example](readme-img/teams-example.png)
@@ -207,4 +207,3 @@ Now click create
 ### Done
 
 You are done. The function will check for updates every 10 minutes and post to Slack and Teams if there are any changes.
-
