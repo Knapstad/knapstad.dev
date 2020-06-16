@@ -39,6 +39,11 @@
   },
   "eslintConfig": {
     "root": true,
+    "eslint linebreak-style": [
+      0,
+      "error",
+      "windows"
+    ],
     "env": {
       "node": true
     },
