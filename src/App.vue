@@ -1,10 +1,17 @@
 <template>
   <div id="app">
     <div id="nav">
-      <a href="https://github.com/knapstad">Github<img class="external" src=icons8-external-link-32.svg> </a> |
-      <a href="https://instagram.com/bendikbaker">Instagram <img class="external" src=icons8-external-link-32.svg></a>
+      <a href="https://github.com/knapstad">
+        Github
+        <img class="external" src="icons8-external-link-32.svg" />
+      </a> |
+      <a href="https://instagram.com/bendikbaker">
+        Instagram
+        <img class="external" src="icons8-external-link-32.svg" />
+      </a> |
+      <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -14,14 +21,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  width:500px;
-  height:500px;
-  margin:0 auto;
-  position:absolute;
-  left:50%;
-  top:50%;
-  margin-left:-250px;
-  margin-top:-250px;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -250px;
 }
 
 #nav {
@@ -37,12 +44,12 @@
 }
 #nav a:hover {
   font-weight: bold;
-  color: #0B2740;
+  color: #0b2740;
   text-decoration: none;
 }
 #nav a::before {
-  content: "";
-  color: "#0B2740";
+  content: '';
+  color: '#0B2740';
   position: absolute;
   width: 100%;
   height: 1px;
@@ -61,7 +68,11 @@
   color: #42b983;
 }
 
-img.external{
+img.external {
   width: 1em;
+}
+
+.content {
+  text-align: left;
 }
 </style>

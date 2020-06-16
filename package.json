@@ -7,11 +7,19 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
   "dependencies": {
+    "babel-runtime": "^6.26.0",
     "core-js": "^3.6.5",
+    "html-loader": "^1.1.0",
     "vue": "^2.6.11",
     "vue-headful": "^2.1.0",
-    "vue-router": "^3.2.0"
+    "vue-resource": "^1.5.1",
+    "vue-router": "^3.2.0",
+    "vue-showdown": "^2.4.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
@@ -23,6 +31,10 @@
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
+    "markdown-loader": "^5.1.0",
+    "md-loader": "^0.1.0",
+    "raw-loader": "^4.0.1",
+    "vue-markdown-loader": "^2.4.1",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

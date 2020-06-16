@@ -1,9 +1,28 @@
+
 <template>
-  <div class="about">
-      <vue-headful
-            title="Title from vue-headful"
-            description="Description from vue-headful"
-        />
-    <h1>This is an about page</h1>
+  <div class="content">
+    <VueShowdown :markdown="fileContent"></VueShowdown>
+    <img src="..\assets\Atricles\readme-img\Cloud-Api-enable.png">
   </div>
 </template>
+
+<script>
+import mdFile from '../assets/Atricles/GtmVersionChecker.md';
+
+export default {
+  name: 'VueMarkdown',
+  data() {
+    return {
+      fileContent: '',
+    };
+  },
+  mounted() {
+    this.getMDFile();
+  },
+  methods: {
+    getMDFile() {
+      this.fileContent = mdFile;
+    },
+  },
+};
+</script>
