@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Knapstad logo" src="../assets/BlackLogo.png">
-    <HelloWorld msg="I make stuff with Python"/>
+    <img alt="Knapstad logo" src="@/assets/BlackLogo.png" />
+    <HelloWorld msg="I make stuff with Python" />
   </div>
 </template>
 
