@@ -74,6 +74,7 @@
 }
 main img {
   box-shadow: 0px 1px 5px #000;
+  max-width: 100%;
 }
 img.external {
   width: 1em;
