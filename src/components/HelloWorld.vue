@@ -2,10 +2,6 @@
 
 
   <div class="hello">
-  <vue-headful
-            title="Knapstad"
-            description="I make stuff in Python"
-        />
     <h1>{{ msg }}</h1>
     <p>
       I'm a developer and analyst based in Oslo Norway.<br>
