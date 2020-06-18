@@ -1,5 +1,9 @@
 <template>
   <div class="home">
+      <vue-headful
+            title="Knapstad.dev"
+            description="I make stuff in Python"
+        />
     <img alt="Knapstad logo" src="@/assets/BlackLogo.png" />
     <HelloWorld msg="I make stuff with Python" />
   </div>
