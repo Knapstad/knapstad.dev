@@ -18,7 +18,7 @@ module.exports = {
           {
             loader: 'markdown-loader',
             options: {
-              preventExtract: true,
+              preventExtract: false,
               raw: true
             }
           },
