@@ -10,11 +10,11 @@ This script with this setup will check for changes in your Google Tag Manager co
 
 Slack:
 
-![Screenshot of Slack example](readme-img/slack-example.png)
+![Screenshot of Slack example](./readme-img/slack-example.png)
 
 Teams:
 
-![Screenshot of Teams example](readme-img/teams-example.png)
+![Screenshot of Teams example](./readme-img/teams-example.png)
 
 ## Requirements
 

@@ -72,6 +72,10 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+section img {
+  box-shadow: 0px 1px 5px #000;
+  max-width: 100%;
+}
 main img {
   box-shadow: 0px 1px 5px #000;
   max-width: 100%;
@@ -79,7 +83,9 @@ main img {
 img.external {
   width: 1em;
 }
-
+section{
+  text-align: left;
+}
 .content {
   text-align: left;
 }
