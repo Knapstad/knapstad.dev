@@ -9,4 +9,9 @@ module.exports = [
     name: 'GtmVersionChecker',
     component: () => import(/* webpackChunkName: "GtmVersionChecker" */ '../views/Gtmversionchecker.vue'),
   },
+  {
+    path: '/markdown',
+    name: 'markdownv',
+    component: () => import(/* webpackChunkName: "markdown" */ '@/assets/Atricles/GtmVersionChecker.md'),
+  },
 ];
