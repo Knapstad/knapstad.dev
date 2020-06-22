@@ -17,12 +17,10 @@ module.exports = {
           },
           {
             loader: 'markdown-loader',
-            // optional options
-            /*
-                        options: {
-                            renderer
-                        }
-                        */
+            options: {
+              preventExtract: true,
+              raw: true
+            }
           },
         ],
       }],
