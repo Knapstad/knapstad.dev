@@ -6,28 +6,14 @@
       description="Integrate Google Tag Manager changes with Microsoft Teams and Slack "
     />
     <div class="content">
-      <VueShowdown :markdown="fileContent" flavor="github"></VueShowdown>
+      <Gtm />
     </div>
   </main>
 </template>
 
 <script>
-import mdFile from '@/assets/Atricles/GtmVersionChecker.md';
-
+import Gtm from '@/assets/Atricles/GtmVersionChecker.md';
 export default {
-  name: 'VueMarkdown',
-  data() {
-    return {
-      fileContent: '',
-    };
-  },
-  mounted() {
-    this.getMDFile();
-  },
-  methods: {
-    getMDFile() {
-      this.fileContent = mdFile;
-    },
-  },
+  components: { Gtm },
 };
 </script>
