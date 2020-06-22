@@ -9,9 +9,11 @@ Its intended use is as a [Google Cloud Function](https://cloud.google.com/functi
 This script with this setup will check for changes in your Google Tag Manager container and post the changes to Slack and Microsoft Teams.
 
 Slack:
+
 ![Screenshot of Slack example](readme-img/slack-example.png)
 
 Teams:
+
 ![Screenshot of Teams example](readme-img/teams-example.png)
 
 ## Requirements
@@ -24,7 +26,7 @@ This script requires:q
 - a Slack account
 - a Teams account
 
-Download  config.json, main&#46;py and requrements.txt to your project folder.
+Download  config.json, main.py and requrements.txt to your project folder.
 
 ## The setup
 
