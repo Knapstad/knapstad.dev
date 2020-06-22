@@ -13,6 +13,7 @@
 
 <script>
 import Gtm from '@/assets/Atricles/GtmVersionChecker.md';
+
 export default {
   components: { Gtm },
 };
