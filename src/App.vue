@@ -92,7 +92,7 @@ img.nav {
   position: relative;
   top: 1rem;
 }
-@media only screen and (min-width: 769px;) {
+@media only screen and (min-width: 769px) {
   #app {
     width: 500px;
     height: 500px;
@@ -102,6 +102,9 @@ img.nav {
     top: 50%;
     margin-left: -250px;
     margin-top: -250px;
+  }
+  #nav {
+    font-size: 18px;git 
   }
 }
 </style>
