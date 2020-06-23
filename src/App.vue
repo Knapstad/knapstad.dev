@@ -22,22 +22,18 @@
 
 <style>
 #app {
+  width: 100%;
+  height: auto;
+  position: relative;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  width: 500px;
-  height: 500px;
-  margin: 0 auto;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -250px;
-  margin-top: -250px;
 }
-
 #nav {
-  padding: 30px;
+  padding-block-end: 2rem;
+  width: auto;
+  font-size: 13px;
 }
 
 #nav a.navlink {
@@ -83,7 +79,7 @@ main img {
 img.external {
   width: 1em;
 }
-section{
+section {
   text-align: left;
 }
 .content {
@@ -95,5 +91,17 @@ img.nav {
   padding-right: 1em;
   position: relative;
   top: 1rem;
+}
+@media only screen and (min-width: 769px;) {
+  #app {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -250px;
+  }
 }
 </style>
