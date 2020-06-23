@@ -18,7 +18,7 @@ Teams:
 
 ## Requirements
 
-This script requires:q
+This script requires:
 
 - Python 3.6 or higher
 - a Google Tag Manager account
@@ -60,7 +60,7 @@ Do the same for Cloud functions API.
 
 ### Step 3: Set up the cloud storage
 
-Now that you have enabled the APIs, you need somewhere to store the data. [Go to Google Cloud Storage]("https://console.cloud.google.com/storage/browser") and click Create Bucket.
+Now that you have enabled the APIs, you need somewhere to store the data. [Go to Google Cloud Storage](https://console.cloud.google.com/storage/browser) and click Create Bucket.
 
 ![Screenshot of the create bucket dialog](./readme-img/Create-bucket.png)
 
@@ -209,3 +209,6 @@ Now click create
 ### Done
 
 You are done. The function will check for updates every 10 minutes and post to Slack and Teams if there are any changes.
+
+
+
