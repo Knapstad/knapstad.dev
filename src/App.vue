@@ -104,7 +104,7 @@ img.nav {
     margin-top: -250px;
   }
   #nav {
-    font-size: 18px;git 
+    font-size: 18px;
   }
 }
 </style>
