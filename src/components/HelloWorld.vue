@@ -6,8 +6,8 @@
       <br />
       <a href="https://github.com/knapstad" target="_blank" rel="noopener">
         Check out my stuff at Github
-        <img class="external" src="icons8-external-link-32.svg" />
-      </a>.
+        <img class="external" src="icons8-external-link-32.svg" /> </a
+      >.
     </p>
   </div>
 </template>

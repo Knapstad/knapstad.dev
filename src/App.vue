@@ -8,11 +8,13 @@
         <a href="https://github.com/knapstad" class="navlink">
           Github
           <img class="external" src="icons8-external-link-32.svg" />
-        </a> |
+        </a>
+        |
         <a href="https://instagram.com/bendikbaker" class="navlink">
           Instagram
           <img class="external" src="icons8-external-link-32.svg" />
-        </a> |
+        </a>
+        |
         <router-link to="/gtmversionchecker" class="navlink">Gtm Version Checker</router-link>
       </nav>
     </div>

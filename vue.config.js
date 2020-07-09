@@ -5,10 +5,11 @@ module.exports = {
     sitemap: {
       baseURL: 'https://knapstad.dev',
       routes,
-    }
+    },
   },
   chainWebpack(config) {
-    config.module.rule('md')
+    config.module
+      .rule('md')
       .test(/\.md/)
       .use('vue-loader')
       .loader('vue-loader')
@@ -16,7 +17,7 @@ module.exports = {
       .use('vue-markdown-loader')
       .loader('vue-markdown-loader/lib/markdown-compiler')
       .options({
-        raw: true
-      })
+        raw: true,
+      });
   },
 };
