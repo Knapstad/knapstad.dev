@@ -1,0 +1,71 @@
+<template>
+  <div>
+    <div class="button deltager">
+      <form>
+        <button @click="adduser(folk, navn, $event)">Legg til deltager</button>
+        <input v-model="navn" placeholder="Skriv inn navn" />
+      </form>
+    </div>
+    <div v-for="user in folk" :key="user.name" class="juleuser">
+      <Juleuser v-bind:user="user" />
+    </div>
+  </div>
+</template>
+
+<script>
+import Juleuser from '../components/JuleUser.vue';
+
+export default {
+  name: 'Julegaver',
+  components: {
+    Juleuser,
+  },
+  methods: {
+    adduser: function(folk, navn, event) {
+      if (event) {
+        event.preventDefault();
+      }
+      folk.push({ name: navn, antall: 0, poeng: 0.0 });
+    },
+  },
+  data() {
+    return {
+      folk: [
+        { name: 'bendik', antall: 10, poeng: 2.0 },
+        { name: 'daniel', antall: 12, poeng: 10.0 },
+        { name: 'Mamma', antall: 10, poeng: 4.0 },
+      ],
+    };
+  },
+};
+</script>
+<style scoped>
+div.button {
+  text-align: left;
+  margin-bottom: 1rem;
+  /* padding-bottom: 1rem; */
+}
+button {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-left: 1rem;
+  padding: 0.2em 1.45em;
+  border: 0.15em solid #cccccc;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #000000;
+  background-color: #cccccc;
+  text-align: center;
+  position: relative;
+  justify-content: left;
+}
+button:hover {
+  border-color: #7a7a7a;
+}
+button:active {
+  background-color: #999999;
+}
+</style>
