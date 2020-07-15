@@ -25,15 +25,15 @@ export default {
       if (event) {
         event.preventDefault();
       }
-      folk.push({ name: navn, antall: 0, poeng: 0.0 });
+      folk.push({ name: navn, number: 0, points: 0.0 });
     },
   },
   data() {
     return {
       folk: [
-        { name: 'bendik', antall: 10, poeng: 2.0 },
-        { name: 'daniel', antall: 12, poeng: 10.0 },
-        { name: 'Mamma', antall: 10, poeng: 4.0 },
+        { name: 'bendik', number: 10, points: 2.0 },
+        { name: 'daniel', number: 12, points: 10.0 },
+        { name: 'Mamma', number: 10, points: 4.0 },
       ],
     };
   },

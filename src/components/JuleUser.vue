@@ -5,7 +5,7 @@
         {{ user.name }}
       </div>
       <div class="buttonwrapper column">
-        <button @click="removeuser(folk, user)" class="danger">Slett</button>
+        <button @click="removeuser(user)" class="danger">Slett</button>
       </div>
     </div>
     <div class="row">
@@ -38,21 +38,21 @@ export default {
   name: 'Juleuser',
   props: ['user'],
   methods: {
-    prosent: function(person) {
-      return `${Math.round((person.poeng / person.antall) * 100)}%`;
+    prosent: function(user) {
+      return `${Math.round((user.points / user.number) * 100)}%`;
     },
-    addgave: function(person) {
-      person.antall++;
+    addgave: function(user) {
+      user.antall++;
     },
-    addpoeng: function(person) {
-      person.poeng++;
+    addpoeng: function(user) {
+      user.poeng++;
     },
-    addhalvtpoeng: function(person) {
-      person.poeng = person.poeng + 0.5;
+    addhalvtpoeng: function(user) {
+      user.poeng = user.poeng + 0.5;
     },
-    removeuser: function(folk, person) {
+    removeuser: function(user) {
       //TODO
-      alert(person.navn, folk[1]);
+      alert('hello' + user.name);
     },
   },
 };
