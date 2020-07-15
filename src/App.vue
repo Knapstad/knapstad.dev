@@ -23,6 +23,12 @@
 </template>
 
 <style>
+.row {
+  display: flex;
+}
+.column {
+  flex: 50%;
+}
 #app {
   width: 100%;
   height: 100%;

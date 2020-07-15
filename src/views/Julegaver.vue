@@ -1,9 +1,11 @@
 <template>
   <div>
     <div class="button deltager">
-      <form>
-        <button @click="adduser(folk, name, $event)">Legg til deltager</button>
-        <input v-model="name" placeholder="Skriv inn navn" />
+      <form class="row">
+        <input class="adduserinput column" v-model="name" placeholder="Skriv inn navn" />
+        <button class="adduserbutton column" @click="adduser(folk, name, $event)">
+          Legg til deltager
+        </button>
       </form>
     </div>
     <div v-for="user in folk" :key="user.name" class="juleuser">
@@ -70,5 +72,16 @@ button:hover {
 }
 button:active {
   background-color: #999999;
+}
+.adduserinput {
+  height: 2rem;
+  padding: 0;
+}
+.adduserbutton {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding: 0;
+  height: 2.2rem;
+  margin-left: 0;
 }
 </style>

@@ -11,8 +11,8 @@
     <div class="row">
       <div class="column">
         <div class="poeng">
-          <p>Antall gaver: {{ user.antall }}</p>
-          <p>Antall poeng: {{ user.poeng }}</p>
+          <p>Antall gaver: {{ user.number }}</p>
+          <p>Antall poeng: {{ user.points }}</p>
         </div>
       </div>
       <div class="column">
@@ -42,13 +42,13 @@ export default {
       return `${Math.round((user.points / user.number) * 100)}%`;
     },
     addgave: function(user) {
-      user.antall++;
+      user.number++;
     },
     addpoeng: function(user) {
-      user.poeng++;
+      user.points++;
     },
     addhalvtpoeng: function(user) {
-      user.poeng = user.poeng + 0.5;
+      user.points = user.points + 0.5;
     },
     removeuser: function(user) {
       //TODO
@@ -68,12 +68,7 @@ div.juleuser {
   width: 100%;
   margin-block-end: 1rem;
 }
-.row {
-  display: flex;
-}
-.column {
-  flex: 50%;
-}
+
 .username {
   padding-left: 1rem;
   font-size: 1.5rem;
