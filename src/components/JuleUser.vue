@@ -5,7 +5,7 @@
         {{ user.name }}
       </div>
       <div class="buttonwrapper column">
-        <button @click="$emit('removeuser', user)" class="delete">X</button>
+        <button @click="$emit('removeuser', user)" class="delete">x</button>
       </div>
     </div>
     <div class="row">
@@ -85,10 +85,10 @@ div.juleuser {
   height: 100%;
   margin: auto;
   justify-content: flex-end;
-  padding-right: 0.7rem;
+  /* padding-right: 0.7rem; */
 }
 button {
-  height: 10%;
+  /* height: 10%; */
 }
 div.poeng {
   padding-left: 1rem;
@@ -127,9 +127,12 @@ div.nameheader {
   font-size: 1.5rem;
 }
 button.delete {
-  background: red;
+  background: rgba(251, 75, 75, 0.623);
   color: white;
   border: 0;
-  border-radius: 50%;
+  border-top-right-radius: 10px;
+  display: block;
+  width: 3rem;
+  height: 2.1em;
 }
 </style>
