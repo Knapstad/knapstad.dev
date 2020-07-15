@@ -2,12 +2,12 @@
   <div>
     <div class="button deltager">
       <form>
-        <button @click="adduser(folk, navn, $event)">Legg til deltager</button>
-        <input v-model="navn" placeholder="Skriv inn navn" />
+        <button @click="adduser(folk, name, $event)">Legg til deltager</button>
+        <input v-model="name" placeholder="Skriv inn navn" />
       </form>
     </div>
     <div v-for="user in folk" :key="user.name" class="juleuser">
-      <Juleuser v-bind:user="user" />
+      <Juleuser v-bind:user="user" @removeuser="removeuser(folk, user)" />
     </div>
   </div>
 </template>
@@ -26,6 +26,9 @@ export default {
         event.preventDefault();
       }
       folk.push({ name: navn, number: 0, points: 0.0 });
+    },
+    removeuser: function(folk, user) {
+      folk.splice(folk.indexOf(user), 1);
     },
   },
   data() {
