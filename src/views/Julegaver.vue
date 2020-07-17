@@ -2,8 +2,8 @@
   <div>
     <div class="button deltager">
       <form class="row">
-        <input class="adduserinput column" v-model="name" placeholder="Skriv inn navn" />
-        <button class="adduserbutton column" @click="adduser(folk, name, $event)">
+        <input class="adduserinput" v-model="name" placeholder=" Skriv inn navn" />
+        <button class="adduserbutton" @click="adduser(folk, name, $event)">
           Legg til deltager
         </button>
       </form>
@@ -76,12 +76,27 @@ button:active {
 .adduserinput {
   height: 2rem;
   padding: 0;
+  border: 0;
+  /* border: 0.5px solid; */
+  margin-right: -4px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 70%;
+  font-size: 20px;
 }
 .adduserbutton {
+  /* border: 0.5px solid; */
+  border-left: 0;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   padding: 0;
-  height: 2.2rem;
+  height: 2.1rem;
   margin-left: 0;
+  width: 31%;
+}
+
+.deltager {
+  box-shadow: 2px 2px 5px #000;
+  border-radius: 5px;
 }
 </style>
