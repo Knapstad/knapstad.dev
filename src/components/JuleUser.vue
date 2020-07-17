@@ -5,7 +5,14 @@
         {{ user.name }}
       </div>
       <div class="buttonwrapper column">
-        <button @click="$emit('removeuser', user)" class="delete">x</button>
+        <button @click="$emit('removeuser', user)" class="delete">
+          <svg style="width:24px;height:24px" viewBox="0 -2 24 24">
+            <path
+              fill="currentColor"
+              d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
+            />
+          </svg>
+        </button>
       </div>
     </div>
     <div class="row">
@@ -80,31 +87,26 @@ div.juleuser {
   height: 100%;
   margin: auto;
   justify-content: flex-end;
-  /* padding-right: 0.7rem; */
 }
-button {
-  /* height: 10%; */
-}
+
 div.poeng {
   padding-left: 1rem;
   width: 50%;
   position: relative;
 }
 
-/* span {
-  left: 1rem;
-} */
 div.edit p {
   margin: 0;
   padding: 0.7rem;
   text-align: right;
-  /* justify-content: flex-end; */
 }
+
 div.nameheader {
   background: lightgray;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
+
 .w3-light-grey {
   background: lightgray;
   border-radius: 0;
@@ -121,13 +123,15 @@ div.nameheader {
   line-height: 2rem;
   font-size: 1.5rem;
 }
+
 button.delete {
   background: rgba(251, 75, 75, 0.623);
   color: white;
+  font-size: 20px;
   border: 0;
   border-top-right-radius: 10px;
   display: block;
   width: 3rem;
-  height: 2.1em;
+  height: 2rem;
 }
 </style>
