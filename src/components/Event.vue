@@ -1,25 +1,31 @@
 <template>
   <div>
-    <Event
-      v-bind:group="folk"
-      @removeuser="removeuser(folk, $event)"
-      @adduser="adduser(folk, $event)"
-    />
+    <div class="button deltager">
+      <form class="row">
+        <input class="adduserinput" v-model="name" placeholder=" Skriv inn navn" />
+        <button class="adduserbutton" @click.prevent="$emit('adduser', name)">
+          Legg til deltager
+        </button>
+      </form>
+    </div>
+    <div v-for="user in group" :key="user.name" class="juleuser">
+      <Juleuser v-bind:user="user" @removeuser="$emit('removeuser', $event)" />
+    </div>
   </div>
 </template>
-
 <script>
-import Event from '@/components/Event.vue';
-
+import Juleuser from '@/components/JuleUser.vue';
 export default {
-  name: 'Julegaver',
+  name: 'Group',
+  props: ['group'],
   components: {
-    Event,
+    Juleuser,
   },
   methods: {
-    adduser: function(folk, navn) {
-      console.log(navn);
-      console.log(folk);
+    adduser: function(folk, navn, event) {
+      if (event) {
+        event.preventDefault();
+      }
       folk.push({ name: navn, number: 0, points: 0.0 });
     },
     removeuser: function(folk, user) {
@@ -30,11 +36,6 @@ export default {
     return {
       user: '',
       name: '',
-      folk: [
-        { name: 'bendik', number: 10, points: 2.0 },
-        { name: 'daniel', number: 12, points: 10.0 },
-        { name: 'Mamma', number: 10, points: 4.0 },
-      ],
     };
   },
 };
@@ -43,6 +44,7 @@ export default {
 div.button {
   text-align: left;
   margin-bottom: 1rem;
+  /* padding-bottom: 1rem; */
 }
 button {
   border-top-left-radius: 5px;

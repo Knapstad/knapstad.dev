@@ -66,55 +66,49 @@ export default {
 </script>
 
 <style scoped>
-div.juleuser {
+div.juleuser[data-v-344f7ac2] {
   background: whitesmoke;
   text-align: left;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   box-shadow: 2px 2px 5px #000;
   width: 100%;
+  -webkit-margin-after: 1rem;
   margin-block-end: 1rem;
 }
-
-.username {
+.username[data-v-344f7ac2] {
   padding-left: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
 }
-
-.buttonwrapper {
+.buttonwrapper[data-v-344f7ac2] {
   display: flex;
   height: 100%;
   margin: auto;
   justify-content: flex-end;
 }
-
-div.poeng {
+div.poeng[data-v-344f7ac2] {
   padding-left: 1rem;
-  width: 50%;
+  width: 75%;
   position: relative;
 }
-
-div.edit p {
+div.edit p[data-v-344f7ac2] {
   margin: 0;
   padding: 0.7rem;
   text-align: right;
 }
-
-div.nameheader {
+div.nameheader[data-v-344f7ac2] {
   background: lightgray;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
-
-.w3-light-grey {
+.w3-light-grey[data-v-344f7ac2] {
   background: lightgray;
   border-radius: 0;
   margin-top: 1rem;
   position: relative;
 }
-
-.w3-grey {
+.w3-grey[data-v-344f7ac2] {
   border-radius: 0;
   background: gray;
   color: white;
@@ -123,8 +117,7 @@ div.nameheader {
   line-height: 2rem;
   font-size: 1.5rem;
 }
-
-button.delete {
+button.delete[data-v-344f7ac2] {
   background: rgba(251, 75, 75, 0.623);
   color: white;
   font-size: 20px;
@@ -133,5 +126,6 @@ button.delete {
   display: block;
   width: 3rem;
   height: 2rem;
+  text-align: center;
 }
 </style>
