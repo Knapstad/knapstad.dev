@@ -57,10 +57,6 @@ export default {
     addhalvtpoeng: function(user) {
       user.points = user.points + 0.5;
     },
-    removeuser: function(user) {
-      //TODO
-      alert('hello' + user.name);
-    },
   },
 };
 </script>
