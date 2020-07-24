@@ -1,8 +1,8 @@
 <template>
-  <div class="juleuser">
+  <div class="cardbg">
     <div class="nameheader row">
-      <div class="username column">
-        {{ user.name }}
+      <div class="name column">
+        {{ event.name }}
       </div>
       <div class="buttonwrapper column">
         <button @click="$emit('removeuser', user)" class="delete">
@@ -18,23 +18,8 @@
     <div class="row">
       <div class="column">
         <div class="poeng">
-          <p>Antall gaver: {{ user.number }}</p>
-          <p>Antall poeng: {{ user.points }}</p>
+          <p>Vinner: {{ event.winner }}</p>
         </div>
-      </div>
-      <div class="column">
-        <div class="edit">
-          <p><button @click="addgave(user)">Ny gave</button></p>
-          <p>
-            <button @click="addhalvtpoeng(user)">+ 0.5</button
-            ><button @click="addpoeng(user)">+ 1</button>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-light-grey">
-      <div class="w3-grey" :style="{ width: prosent(user) }">
-        {{ prosent(user) }}
       </div>
     </div>
   </div>
@@ -42,27 +27,18 @@
 
 <script>
 export default {
-  name: 'Juleuser',
-  props: ['user'],
+  name: 'EventPreveiw',
+  props: ['event'],
   methods: {
     prosent: function(user) {
       return `${Math.round((user.points / user.number) * 100)}%`;
-    },
-    addgave: function(user) {
-      user.number++;
-    },
-    addpoeng: function(user) {
-      user.points++;
-    },
-    addhalvtpoeng: function(user) {
-      user.points = user.points + 0.5;
     },
   },
 };
 </script>
 
 <style scoped>
-div.juleuser[data-v-344f7ac2] {
+div.cardbg {
   background: whitesmoke;
   text-align: left;
   border-top-right-radius: 10px;
@@ -72,39 +48,39 @@ div.juleuser[data-v-344f7ac2] {
   -webkit-margin-after: 1rem;
   margin-block-end: 1rem;
 }
-.username[data-v-344f7ac2] {
+.name {
   padding-left: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
 }
-.buttonwrapper[data-v-344f7ac2] {
+.buttonwrapper {
   display: flex;
   height: 100%;
   margin: auto;
   justify-content: flex-end;
 }
-div.poeng[data-v-344f7ac2] {
+div.poeng {
   padding-left: 1rem;
   width: 75%;
   position: relative;
 }
-div.edit p[data-v-344f7ac2] {
+div.edit p {
   margin: 0;
   padding: 0.7rem;
   text-align: right;
 }
-div.nameheader[data-v-344f7ac2] {
+div.nameheader {
   background: lightgray;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
-.w3-light-grey[data-v-344f7ac2] {
+.w3-light-grey {
   background: lightgray;
   border-radius: 0;
   margin-top: 1rem;
   position: relative;
 }
-.w3-grey[data-v-344f7ac2] {
+.w3-grey {
   border-radius: 0;
   background: gray;
   color: white;
@@ -113,7 +89,7 @@ div.nameheader[data-v-344f7ac2] {
   line-height: 2rem;
   font-size: 1.5rem;
 }
-button.delete[data-v-344f7ac2] {
+button.delete {
   background: rgba(251, 75, 75, 0.623);
   color: white;
   font-size: 20px;

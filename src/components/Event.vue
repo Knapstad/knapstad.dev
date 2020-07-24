@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="button deltager">
+    <div class="button user">
       <form class="row">
         <input class="adduserinput" v-model="name" placeholder=" Skriv inn navn" />
         <button class="adduserbutton" @click.prevent="$emit('adduser', name)">
@@ -8,7 +8,7 @@
         </button>
       </form>
     </div>
-    <div v-for="user in group" :key="user.name" class="juleuser">
+    <div v-for="user in group" :key="user.name" class="user">
       <Juleuser v-bind:user="user" @removeuser="$emit('removeuser', $event)" />
     </div>
   </div>
@@ -85,13 +85,13 @@ button:active {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   padding-left: 1px;
-  padding-right: 1px;
+  padding-right: 0;
   height: 2.1rem;
   margin-left: 0;
-  min-width: 33%;
+  min-width: 35%;
 }
 
-.deltager {
+.user {
   box-shadow: 2px 2px 5px #000;
   border-radius: 5px;
 }

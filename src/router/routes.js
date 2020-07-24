@@ -27,4 +27,9 @@ module.exports = [
     name: 'julegaver',
     component: () => import(/* webpackChunkName: "julegaver" */ '@/views/Julegaver.vue'),
   },
+  {
+    path: '/test',
+    name: 'test',
+    component: () => import(/* webpackChunkName: "test" */ '@/views/Test.vue'),
+  },
 ];
