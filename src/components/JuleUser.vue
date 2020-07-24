@@ -32,8 +32,8 @@
         </div>
       </div>
     </div>
-    <div class="w3-light-grey">
-      <div class="w3-grey" :style="{ width: prosent(user) }">
+    <div class="w3-light-grey" data-v-344f7ac2>
+      <div class="w3-grey" :style="{ width: prosent(user) }" data-v-344f7ac2>
         {{ prosent(user) }}
       </div>
     </div>
