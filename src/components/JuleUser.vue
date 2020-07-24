@@ -1,11 +1,11 @@
 <template>
-  <div class="juleuser">
-    <div class="nameheader row">
-      <div class="username column">
+  <div class="juleuser" data-v-344f7ac2>
+    <div class="nameheader row" data-v-344f7ac2>
+      <div class="username column" data-v-344f7ac2>
         {{ user.name }}
       </div>
-      <div class="buttonwrapper column">
-        <button @click="$emit('removeuser', user)" class="delete">
+      <div class="buttonwrapper column" data-v-344f7ac2>
+        <button @click="$emit('removeuser', user)" class="delete" data-v-344f7ac2>
           <svg style="width:24px;height:24px" viewBox="0 -2 24 24">
             <path
               fill="currentColor"
@@ -17,13 +17,13 @@
     </div>
     <div class="row">
       <div class="column">
-        <div class="poeng">
+        <div class="poeng" data-v-344f7ac2>
           <p>Antall gaver: {{ user.number }}</p>
           <p>Antall poeng: {{ user.points }}</p>
         </div>
       </div>
       <div class="column">
-        <div class="edit">
+        <div class="edit" data-v-344f7ac2>
           <p><button @click="addgave(user)">Ny gave</button></p>
           <p>
             <button @click="addhalvtpoeng(user)">+ 0.5</button
