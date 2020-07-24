@@ -24,8 +24,8 @@
       </div>
       <div class="column">
         <div class="edit" data-v-344f7ac2>
-          <p><button @click="addgave(user)">Ny gave</button></p>
-          <p>
+          <p data-v-344f7ac2><button @click="addgave(user)">Ny gave</button></p>
+          <p data-v-344f7ac2>
             <button @click="addhalvtpoeng(user)">+ 0.5</button
             ><button @click="addpoeng(user)">+ 1</button>
           </p>
