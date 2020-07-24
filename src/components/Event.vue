@@ -8,7 +8,7 @@
         </button>
       </form>
     </div>
-    <div v-for="user in group" :key="user.name" class="user">
+    <div v-for="user in group" :key="user.name" class="noclass">
       <Juleuser v-bind:user="user" @removeuser="$emit('removeuser', $event)" />
     </div>
   </div>
