@@ -1,22 +1,47 @@
 <template>
-  <div class="counter">
+  <div v-if="date === 'day'" class="counter">
     <div v-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 50">
       <p>Oj oj oj nå er det ikke lenge igjen til jul!</p>
       <p>
-        Det er bare <strong>{{ (returnDateJson('12/24/2020').days / 1) >> 0 }}</strong> dager igjen!
+        Det er bare <strong>{{ days }}</strong> dager igjen!
+      </p>
+    </div>
+    <div v-else onload="$emit('dateObject',day)">
+      <p>
+        Det er <strong>{{ days }}</strong> dager igjen til jul.
+      </p>
+    </div>
+  </div>
+  <div v-else-if="date === 'week'" class="counter">
+    <div v-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 50">
+      <p>Oj oj oj nå er det ikke lenge igjen til jul!</p>
+      <p>
+        Det er bare <strong>{{ weeks }}</strong> uker igjen!
       </p>
     </div>
     <div v-else>
       <p>
-        Det er <strong>{{ (returnDateJson('12/24/2020').days / 1) >> 0 }}</strong> dager igjen til
-        jul.
+        Det er <strong>{{ weeks }}</strong> uker igjen til jul.
       </p>
     </div>
   </div>
+  <div v-else>Nope</div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      days: (this.returnDateJson('12/24/2020').days / 1) >> 0,
+      weeks: (this.returnDateJson('12/24/2020').weeks / 1) >> 0,
+    };
+  },
+  mounted: function() {
+    console.log('joda');
+    this.$nextTick(function() {
+      this.$emit('dateObject', { days: this.days, weeks: this.weeks });
+    });
+  },
   methods: {
     returnDateJson: function(date) {
       let today = new Date();
