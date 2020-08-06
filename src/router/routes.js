@@ -38,4 +38,10 @@ module.exports = [
     component: () =>
       import(/* webpackChunkName: "dagerigjentiljul" */ '@/views/DagerIgjenTilJul.vue'),
   },
+  {
+    path: '/ukerigjentiljul',
+    name: 'ukerigjentiljul',
+    component: () =>
+      import(/* webpackChunkName: "ukerigjentiljul" */ '@/views/UkerIgjenTilJul.vue'),
+  },
 ];
