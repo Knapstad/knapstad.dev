@@ -1,5 +1,10 @@
 <template>
-  <ChristmasCounter date="week" @dateObject="getData($event)" />
+  <div>
+    <ChristmasCounter date="day" @dateObject="getData($event)" />
+    <router-link to="/ukerigjentiljul">
+      <p>Lurer du på hvor mange uker det er til jul?</p>
+    </router-link>
+  </div>
 </template>
 
 <script>
