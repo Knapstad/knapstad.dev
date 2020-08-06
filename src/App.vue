@@ -18,11 +18,16 @@
         <router-link to="/gtmversionchecker" class="navlink">Gtm Version Checker</router-link>
       </nav>
     </div>
-    <router-view />
+    <transition name="page">
+      <router-view />
+    </transition>
   </div>
 </template>
 
 <style>
+html {
+  overflow: auto;
+}
 .row {
   display: flex;
 }
@@ -31,7 +36,7 @@
 }
 #app {
   width: 100%;
-  height: 100%;
+  height: auto;
   position: relative;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -113,6 +118,20 @@ img.nav {
   }
   #nav {
     font-size: 18px;
+  }
+  .page-enter-active,
+  .page-leave-active {
+    transition-duration: 0.2s;
+    transition-property: opacity, transform;
+    transition-timing-function: cubic-bezier(0, 0, 1, 1);
+    overflow: hidden;
+  }
+
+  .page-enter,
+  .page-leave-active {
+    opacity: 0;
+    transform: translate(2em, 2em);
+    transition-duration: 0.1s;
   }
 }
 </style>
