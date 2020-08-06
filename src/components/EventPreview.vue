@@ -2,7 +2,7 @@
   <div class="cardbg">
     <div class="nameheader row">
       <div class="name column">
-        {{ event.name }}
+        {{ event.date }}
       </div>
       <div class="buttonwrapper column">
         <button @click="$emit('removeuser', user)" class="delete">
@@ -18,7 +18,7 @@
     <div class="row">
       <div class="column">
         <div class="poeng">
-          <p>Vinner: {{ event.winner }}</p>
+          <p>Vinner: {{ event }}</p>
         </div>
       </div>
     </div>
