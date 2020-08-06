@@ -32,4 +32,10 @@ module.exports = [
     name: 'test',
     component: () => import(/* webpackChunkName: "test" */ '@/views/Test.vue'),
   },
+  {
+    path: '/dagerigjentiljul',
+    name: 'dagerigjentiljul',
+    component: () =>
+      import(/* webpackChunkName: "dagerigjentiljul" */ '@/views/DagerIgjenTilJul.vue'),
+  },
 ];
