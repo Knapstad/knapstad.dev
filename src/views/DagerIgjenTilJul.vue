@@ -12,15 +12,15 @@ export default {
   },
   methods: {
     getData(data) {
-      this.days = data.days,
-      this.weeks = data.weeks,
+      this.days = data.days;
+      this.weeks = data.weeks;
     },
   },
-  data(){
-    return{
+  data() {
+    return {
       days: '',
       weeks: '',
-    }
+    };
   },
 };
 </script>
