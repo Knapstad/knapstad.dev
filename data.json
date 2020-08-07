@@ -1,0 +1,68 @@
+{
+  "group": "Knapstad",
+  "data": [
+    {
+      "date": "24/07/2020",
+      "data": [
+        {
+          "created": "12:20",
+          "name": "runde1",
+          "users": [
+            { "name": "Ola", "points": 4.5, "gifts": 5 },
+            { "name": "Maria", "points": 8.0, "gifts": 9 },
+            { "name": "Bendik", "points": 5.0, "gifts": 9 },
+            { "name": "mamma", "points": 4.5, "gifts": 5 }
+          ]
+        },
+        {
+          "created": "12:30",
+          "name": "name",
+          "users": [
+            { "name": "str", "points": 0, "gifts": 0 },
+            { "name": "str1", "points": 0, "gifts": 0 },
+            { "name": "str2", "points": 0, "gifts": 0 }
+          ]
+        },
+        {
+          "created": "12:42",
+          "name": "olas",
+          "users": [
+            { "name": "str1", "points": 5.0, "gifts": 10 },
+            { "name": "str2", "points": 5.0, "gifts": 10 },
+            { "name": "str3", "points": 5.0, "gifts": 10 }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "23/07/2020",
+      "data": [
+        {
+          "created": "12:56",
+          "name": "name",
+          "users": [
+            { "name": "str", "points": 0.0, "gifts": 4 },
+            { "name": "str22", "points": 0.0, "gifts": 4 },
+            { "name": "str33", "points": 0.0, "gifts": 4 }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "22/07/2020",
+      "data": [
+        {
+          "created": "12:59",
+          "name": "name",
+          "users": [
+            { "name": "str5", "points": 2, "gifts": 2 },
+            { "name": "str4", "points": 1.5, "gifts": 3 },
+            { "name": "str3", "points": 1, "gifts": 2 },
+            { "name": "str2", "points": 10.5, "gifts": 11 },
+            { "name": "str1", "points": 20.0, "gifts": 23 }
+          ]
+        }
+      ]
+    }
+  ]
+}
