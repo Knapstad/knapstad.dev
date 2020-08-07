@@ -1,5 +1,7 @@
 <template>
   <div>
+    <vue-headful :title="title" />
+
     <ChristmasCounter date="day" @dateObject="getData($event)" />
     <router-link to="/ukerigjentiljul">
       <p>Lurer du på hvor mange uker det er til jul?</p>
@@ -19,12 +21,14 @@ export default {
     getData(data) {
       this.days = data.days;
       this.weeks = data.weeks;
+      this.title = 'Knapstad.dev - ' + this.days + ' Dager Igjen Til Jul';
     },
   },
   data() {
     return {
       days: '',
       weeks: '',
+      title: '',
     };
   },
 };
