@@ -32,4 +32,9 @@ module.exports = [
     component: () =>
       import(/* webpackChunkName: "ukerigjentiljul" */ '@/views/UkerIgjenTilJul.vue'),
   },
+  {
+    path: '/*',
+    name: '404',
+    component: () => import(/* webpackChunkName: "404" */ '@/views/404.vue'),
+  },
 ];
