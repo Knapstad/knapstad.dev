@@ -41,6 +41,11 @@ module.exports = [
       import(/* webpackChunkName: "ukerigjentiljul" */ '@/views/UkerIgjenTilJul.vue'),
   },
   {
+    path: '/articles',
+    name: 'articles',
+    component: () => import(/* webpackChunkName: "articles" */ '@/views/Articles.vue'),
+  },
+  {
     path: '/*',
     name: '404',
     component: () => import(/* webpackChunkName: "404" */ '@/views/404.vue'),
