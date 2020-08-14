@@ -1,4 +1,4 @@
-import articles from '@/assets/Atricles/articles.json';
+const articles = require('../assets/Atricles/articles.json');
 
 const gtm = articles.map(child => ({
   path: `/articles/${child.path}`,
@@ -6,7 +6,7 @@ const gtm = articles.map(child => ({
   component: () => import(`@/assets/Atricles/${child.path}.md`),
 }));
 
-var routes = [
+module.exports = [
   {
     path: '/',
     name: 'Home',
@@ -59,5 +59,3 @@ var routes = [
   },
   ...gtm,
 ];
-
-export default routes;
