@@ -209,6 +209,3 @@ Now click create
 ### Done
 
 You are done. The function will check for updates every 10 minutes and post to Slack and Teams if there are any changes.
-
-
-
