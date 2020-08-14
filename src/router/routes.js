@@ -11,6 +11,14 @@ module.exports = [
       import(/* webpackChunkName: "GtmVersionChecker" */ '../views/Gtmversionchecker.vue'),
   },
   {
+    path: '/addingarecordsonnetlify',
+    name: 'Adding A and AAA record on netlify',
+    component: () =>
+      import(
+        /* webpackChunkName: "Adding A and AAA record on netlify" */ '../views/AddingARecordsOnNetlify.vue'
+      ),
+  },
+  {
     path: '/julegaver',
     name: 'julegaver',
     component: () => import(/* webpackChunkName: "julegaver" */ '@/views/Julegaver.vue'),

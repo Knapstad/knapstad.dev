@@ -133,5 +133,12 @@ img.nav {
     transform: translate(2em, 2em);
     transition-duration: 0.1s;
   }
+  code {
+    background-color: #eee;
+    border: 0.1px solid #999;
+    display: block;
+    padding: 10px;
+    font-family: Consolas, monaco, monospace;
+  }
 }
 </style>
