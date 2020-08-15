@@ -2,7 +2,7 @@ const articles = require('../assets/Atricles/articles.json');
 
 const gtm = articles.map(child => ({
   path: `/articles/${child.path}`,
-  name: child.title,
+  name: child.path,
   component: () => import(`@/assets/Atricles/${child.path}.md`),
 }));
 
@@ -14,8 +14,7 @@ module.exports = [
   },
   {
     path: '/gtmversionchecker',
-    name: 'GtmVersionChecker',
-    component: () => import('@/views/Gtmversionchecker.vue'),
+    redirect: { name: 'GtmVersionChecker' },
   },
   {
     path: '/julegaver',
