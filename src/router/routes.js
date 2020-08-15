@@ -18,11 +18,6 @@ module.exports = [
     component: () => import('@/views/Gtmversionchecker.vue'),
   },
   {
-    path: '/addingarecordsonnetlify',
-    name: 'Adding A and AAA record on netlify',
-    component: () => import('@/views/AddingARecordsOnNetlify.vue'),
-  },
-  {
     path: '/julegaver',
     name: 'julegaver',
     component: () => import('@/views/Julegaver.vue'),
@@ -47,15 +42,10 @@ module.exports = [
     name: 'articles',
     component: () => import('@/views/Articles.vue'),
   },
-  {
-    path: '/articles/GTM',
-    name: 'articlesGTM',
-    component: () => import('@/assets/Atricles/GtmVersionChecker.md'),
-  },
+  ...gtm,
   {
     path: '/*',
     name: '404',
     component: () => import('@/views/404.vue'),
   },
-  ...gtm,
 ];
