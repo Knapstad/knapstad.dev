@@ -17,6 +17,10 @@ module.exports = [
     redirect: { name: 'GtmVersionChecker' },
   },
   {
+    path: '/addingarecordsonnetlify',
+    redirect: { name: 'AddingARecordsOnNetlify' },
+  },
+  {
     path: '/julegaver',
     name: 'julegaver',
     component: () => import('@/views/Julegaver.vue'),
