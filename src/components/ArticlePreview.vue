@@ -1,12 +1,12 @@
 <template>
-  <div class="cardbg">
+  <div>
     <a :href="article.path" class="cardlink">
-      <h2>{{ article.title | capitalize }}</h2>
-      <p class="date">Created on: {{ article.date }}</p>
-      <p>{{ article.description | capitalize }}</p>
-      <a class="readmore" v-bind:href="article.path">
-        <div v-bind:href="article.path" class="readmore">Read more</div></a
-      >
+      <div class="cardbg">
+        <h2>{{ article.title | capitalize }}</h2>
+        <p class="date">Created on: {{ article.date }}</p>
+        <p>{{ article.description | capitalize }}</p>
+        <div class="readmore">Read more</div>
+      </div>
     </a>
   </div>
 </template>
@@ -55,30 +55,23 @@ p.date {
   color: initial;
   text-decoration: none;
 }
-a.readmore {
-  display: flex;
+
+div.readmore {
   width: 100%;
   border: 0;
   height: 40px;
   padding: 0;
-  margin: 0;
+  margin: auto;
   font-size: 20px;
   background: gray;
   text-decoration: none;
   color: initial;
   appearance: button;
   text-align: center;
+  line-height: 40px;
 }
-div.readmore {
-  margin: auto;
-}
+
 .readmore:hover {
   background: lightgray;
-}
-.readmore:focus {
-  border: 2px solid;
-  font-size: 23px;
-  width: 99.9%;
-  overflow: hidden;
 }
 </style>
