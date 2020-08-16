@@ -7,12 +7,12 @@
         </router-link>
         <a href="https://github.com/knapstad" class="navlink">
           Github
-          <img class="external" src="icons8-external-link-32.svg" />
+          <img class="external" src="@/assets/icons8-external-link-32.svg" />
         </a>
         |
         <a href="https://instagram.com/bendikbaker" class="navlink">
           Instagram
-          <img class="external" src="icons8-external-link-32.svg" />
+          <img class="external" src="@/assets/icons8-external-link-32.svg" />
         </a>
         |
         <router-link to="/articles" class="navlink">Articles</router-link>
