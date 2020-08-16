@@ -1,6 +1,5 @@
 <template>
   <div>
-    <vue-headful :title="title" />
     <ChristmasCounter date="week" @dateObject="getData($event)" />
     <router-link to="/dagerigjentiljul">
       <p>Lurer du på hvor mange dager det er til jul?</p>
