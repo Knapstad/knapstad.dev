@@ -15,7 +15,7 @@
           <img class="external" src="icons8-external-link-32.svg" />
         </a>
         |
-        <router-link to="/gtmversionchecker" class="navlink">Gtm Version Checker</router-link>
+        <router-link to="/articles" class="navlink">Articles</router-link>
       </nav>
     </div>
     <transition name="page">
