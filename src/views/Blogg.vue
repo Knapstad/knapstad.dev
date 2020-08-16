@@ -7,14 +7,19 @@
 <script>
 export default {
   props: ['data'],
+  metaInfo() {
+    return {
+      title: 'Knapstad.dev - ',
+      titleTemplate: `%s | ${this.data.title}`,
+      description: this.data.description,
+    };
+  },
   computed: {
     componentFile() {
       return () => import(`@/assets/Atricles/${this.data.path}.md`);
     },
   },
 };
-// console.log(this.data.path);
-console.log('What');
 </script>
 
 <style></style>
