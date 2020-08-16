@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a :href="article.path" class="cardlink">
+    <a :href="'articles/' + article.path" class="cardlink">
       <div class="cardbg">
         <h2>{{ article.title | capitalize }}</h2>
         <p class="date">Created on: {{ article.date }}</p>
