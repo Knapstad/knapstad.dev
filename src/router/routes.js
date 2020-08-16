@@ -1,9 +1,10 @@
 const articles = require('../assets/Atricles/articles.json');
 
-const gtm = articles.map(child => ({
+const posts = articles.map(child => ({
   path: `/articles/${child.path}`,
   name: child.path,
-  component: () => import(`@/assets/Atricles/${child.path}.md`),
+  component: () => import(`@/views/Blogg.vue`),
+  props: { data: child },
 }));
 
 module.exports = [
@@ -45,7 +46,7 @@ module.exports = [
     name: 'articles',
     component: () => import('@/views/Articles.vue'),
   },
-  ...gtm,
+  ...posts,
   {
     path: '/*',
     name: '404',
