@@ -11,7 +11,7 @@ export default {
     return {
       title: 'Knapstad.dev - ',
       titleTemplate: `%s | ${this.data.title}`,
-      description: this.data.description,
+      meta: [{ name: 'description', content: this.data.description }],
     };
   },
   computed: {
