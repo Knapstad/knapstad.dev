@@ -14,5 +14,17 @@ export default {
   components: {
     HelloWorld,
   },
+  metaInfo() {
+    return {
+      title: 'Knapstad.dev - ',
+      titleTemplate: '%s I make stuff in Python',
+      meta: [
+        {
+          name: 'description',
+          content: 'I`m a developer and analyst based in Oslo Norway, this is my site',
+        },
+      ],
+    };
+  },
 };
 </script>
