@@ -4,9 +4,9 @@ This script was made by inspiration from [Simo Hava's post on a slack notificati
 Its intended use is as a [Google Cloud Function](https://cloud.google.com/functions/) integrated with [Slack](https://www.slack.com) and [Microsoft Teams](https://products.office.com/en-us/microsoft-teams/group-chat-software), but you can run the script anywhere you like.
 [You can find this repo on github](https://github.com/knapstad/gtm-state)
 
-## Example output
+This script, with this setup, will check for changes in your Google Tag Manager container and post the changes to Slack and Microsoft Teams.
 
-This script with this setup will check for changes in your Google Tag Manager container and post the changes to Slack and Microsoft Teams.
+## Example output
 
 Slack:
 
