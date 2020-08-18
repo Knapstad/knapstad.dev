@@ -17,14 +17,26 @@ export default {
     Event,
   },
   methods: {
-    adduser: function(folk, navn) {
+    adduser: function (folk, navn) {
       console.log(navn);
       console.log(folk);
       folk.push({ name: navn, number: 0, points: 0.0 });
     },
-    removeuser: function(folk, user) {
+    removeuser: function (folk, user) {
       folk.splice(folk.indexOf(user), 1);
     },
+  },
+  metaInfo() {
+    return {
+      title: 'Knapstad.dev - ',
+      titleTemplate: `%s Julegave tracker`,
+      meta: [
+        {
+          name: 'description',
+          content: `Min private lille julegavetracker`,
+        },
+      ],
+    };
   },
   data() {
     return {
