@@ -26,6 +26,12 @@ Vue.filter('capitalize', value => {
   return value.charAt(0).toUpperCase() + value.slice(1);
 });
 
+router.afterEach(() => {
+  setTimeout(function() {
+    window.dataLayer.push({ event: 'NavigationComplete' });
+  }, 1000);
+});
+
 new Vue({
   router,
   render: h => h(App),
