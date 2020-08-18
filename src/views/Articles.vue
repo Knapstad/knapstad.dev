@@ -13,6 +13,18 @@ import articles from '@/assets/Atricles/articles.json';
 export default {
   name: 'Articles',
   components: { ArticlePreview },
+  metaInfo() {
+    return {
+      title: 'Knapstad.dev - ',
+      titleTemplate: `%s | Articles`,
+      meta: [
+        {
+          name: 'description',
+          content: `A list of my articles`,
+        },
+      ],
+    };
+  },
   data() {
     return {
       articles,
