@@ -5,7 +5,7 @@
     "node": true
   },
   "extends": [
-    "eslint:recommended",
+    "prettier",
     "plugin:vue/essential",
     "plugin:prettier/recommended"
   ],
