@@ -18,8 +18,6 @@ export default {
   },
   methods: {
     adduser: function(folk, navn) {
-      console.log(navn);
-      console.log(folk);
       folk.push({ name: navn, number: 0, points: 0.0 });
     },
     removeuser: function(folk, user) {
