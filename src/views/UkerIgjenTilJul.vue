@@ -15,6 +15,18 @@ export default {
   components: {
     ChristmasCounter,
   },
+  metaInfo() {
+    return {
+      title: 'Knapstad.dev - ',
+      titleTemplate: `%s | ${this.title}`,
+      meta: [
+        {
+          name: 'description',
+          content: `Lurer du på hvor mange dager det er til jul? Det er ${this.weeks} til jul`,
+        },
+      ],
+    };
+  },
   methods: {
     getData(data) {
       this.days = data.days;
