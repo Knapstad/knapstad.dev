@@ -9,7 +9,10 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
+div {
+  line-height: 100%;
+}
 .huge {
   font-size: 120px;
 }
