@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{ frontpage: $route.path == '/' }">
     <div id="nav">
       <nav>
         <router-link to="/">
@@ -23,7 +23,9 @@
     </transition>
   </div>
 </template>
-
+<script>
+export default {};
+</script>
 <style>
 html {
   overflow: auto;
@@ -113,9 +115,17 @@ img.nav {
     margin: 0 auto;
     position: absolute;
     left: 50%;
-    top: 50%;
     margin-left: -250px;
+    margin-top: 0;
+    top: 0;
+    transition: 0.3s ease-in-out;
+    /* transition: margin-top 1.2s ease-in;
+    transition: top 1.2s ease-in; */
+  }
+  #app.frontpage {
     margin-top: -250px;
+    top: 50%;
+    transition: 0.3s ease-in-out;
   }
   #nav {
     font-size: 18px;
