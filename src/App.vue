@@ -110,20 +110,13 @@ img.nav {
 }
 @media only screen and (min-width: 900px) {
   #app {
-    width: 500px;
-    height: 500px;
+    width: 33%;
     margin: 0 auto;
-    position: absolute;
-    left: 50%;
-    margin-left: -250px;
-    margin-top: 0;
     top: 0;
     transition: 0.3s ease-in-out;
-    /* transition: margin-top 1.2s ease-in;
-    transition: top 1.2s ease-in; */
+    padding-left: calc(100vw - 100%);
   }
   #app.frontpage {
-    margin-top: -250px;
     top: 50%;
     transition: 0.3s ease-in-out;
   }
