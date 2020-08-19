@@ -42,9 +42,10 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  line-height: 150%;
 }
 #nav {
-  padding-block-end: 2rem;
+  margin-bottom: 2rem;
   width: auto;
   font-size: 13px;
 }
