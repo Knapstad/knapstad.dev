@@ -1,13 +1,13 @@
 <template>
   <div>
-    <a :href="'articles/' + article.path" class="cardlink">
+    <router-link :to="`articles/` + article.path" class="cardlink">
       <div class="cardbg">
         <h2>{{ article.title | capitalize }}</h2>
         <p class="date">Created on: {{ article.date }}</p>
         <p>{{ article.description | capitalize }}</p>
         <div class="readmore">Read more</div>
       </div>
-    </a>
+    </router-link>
   </div>
 </template>
 
