@@ -113,16 +113,65 @@ div.nameheader[data-v-344f7ac2] {
   line-height: 2rem;
   font-size: 1.5rem;
 }
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-left: 1rem;
+  padding: 0.2em 1.45em;
+  border: 0.15em solid #cccccc;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #000000;
+  background-color: #cccccc;
+  text-align: center;
+  position: relative;
+  justify-content: left;
+}
+button:hover {
+  border-color: #7a7a7a;
+}
+button:active {
+  background-color: #999999;
+}
+.adduserinput {
+  height: 2rem;
+  padding: 0;
+  border: 0.2px solid;
+  border-right: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  min-width: 65%;
+  font-size: 20px;
+}
+.adduserbutton {
+  border: 0.2px solid;
+  border-left: 0;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding-left: 1px;
+  padding-right: 0;
+  /* height: 2.1rem; */
+  margin-left: 0;
+  min-width: 35%;
+}
 button.delete[data-v-344f7ac2] {
+  padding: 0;
   background: rgba(251, 75, 75, 0.623);
   color: white;
   font-size: 20px;
   border: 0;
+  border-radius: 0;
   border-top-right-radius: 10px;
   display: block;
   width: 3rem;
   height: 2rem;
-  text-align: center;
+  text-align: center !important;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
