@@ -97,7 +97,7 @@ button:active {
   border-bottom-left-radius: 0px;
   padding-left: 1px;
   padding-right: 1px;
-  height: 2.1rem;
+  /* height: 2.1rem; */
   margin-left: 0;
   min-width: 33%;
 }
