@@ -66,7 +66,6 @@ div.readmore {
   background: gray;
   text-decoration: none;
   color: initial;
-  appearance: button;
   text-align: center;
   line-height: 40px;
 }
