@@ -55,6 +55,9 @@ div.button {
   margin-bottom: 1rem;
 }
 button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
