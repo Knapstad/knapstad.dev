@@ -1,9 +1,7 @@
 <template>
   <div class="juleuser" data-v-344f7ac2>
     <div class="nameheader row" data-v-344f7ac2>
-      <div class="username column" data-v-344f7ac2>
-        {{ user.name }}
-      </div>
+      <div class="username column" data-v-344f7ac2>{{ user.name }}</div>
       <div class="buttonwrapper column" data-v-344f7ac2>
         <button @click="$emit('removeuser', user)" class="delete" data-v-344f7ac2>
           <svg style="width:24px;height:24px" viewBox="0 -2 24 24">
@@ -24,10 +22,12 @@
       </div>
       <div class="column">
         <div class="edit" data-v-344f7ac2>
-          <p data-v-344f7ac2><button @click="addgave(user)">Ny gave</button></p>
           <p data-v-344f7ac2>
-            <button @click="addhalvtpoeng(user)">+ 0.5</button
-            ><button @click="addpoeng(user)">+ 1</button>
+            <button @click="addgave(user)">Ny gave</button>
+          </p>
+          <p data-v-344f7ac2>
+            <button @click="addhalvtpoeng(user)">+ 0.5</button>
+            <button @click="addpoeng(user)">+ 1</button>
           </p>
         </div>
       </div>
@@ -123,5 +123,8 @@ button.delete[data-v-344f7ac2] {
   width: 3rem;
   height: 2rem;
   text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 </style>
