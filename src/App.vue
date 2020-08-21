@@ -181,7 +181,7 @@ img.nav {
     padding: 10px;
     font-family: Consolas, monaco, monospace;
   }
-  button{
+  button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
