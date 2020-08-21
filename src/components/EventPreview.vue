@@ -1,9 +1,7 @@
 <template>
   <div class="cardbg">
     <div class="nameheader row">
-      <div class="name column">
-        {{ event.date }}
-      </div>
+      <div class="name column">{{ event.date }}</div>
       <div class="buttonwrapper column">
         <button @click="$emit('removeuser', user)" class="delete">
           <svg style="width:24px;height:24px" viewBox="0 -2 24 24">
@@ -48,6 +46,11 @@ div.cardbg {
   -webkit-margin-after: 1rem;
   margin-block-end: 1rem;
 }
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 .name {
   padding-left: 1rem;
   font-size: 1.5rem;
@@ -90,6 +93,9 @@ div.nameheader {
   font-size: 1.5rem;
 }
 button.delete {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background: rgba(251, 75, 75, 0.623);
   color: white;
   font-size: 20px;
