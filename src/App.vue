@@ -108,7 +108,7 @@ img.nav {
   position: relative;
   top: 1rem;
 }
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1200px) {
   #app {
     width: 33%;
     margin: 0 auto;
@@ -143,6 +143,48 @@ img.nav {
     display: block;
     padding: 10px;
     font-family: Consolas, monaco, monospace;
+  }
+}
+@media only screen and (min-width: 900px) {
+  #app {
+    width: 50%;
+    margin: 0 auto;
+    top: 0;
+    transition: 0.3s ease-in-out;
+    padding-left: calc(100vw - 100%);
+  }
+  #app.frontpage {
+    top: 50%;
+    transition: 0.3s ease-in-out;
+  }
+  #nav {
+    font-size: 18px;
+  }
+  .page-enter-active,
+  .page-leave-active {
+    transition-duration: 0.2s;
+    transition-property: opacity, transform;
+    transition-timing-function: cubic-bezier(0, 0, 1, 1);
+    overflow: hidden;
+  }
+
+  .page-enter,
+  .page-leave-active {
+    opacity: 0;
+    transform: translate(2em, 2em);
+    transition-duration: 0.1s;
+  }
+  code {
+    background-color: #eee;
+    border: 0.1px solid #999;
+    display: block;
+    padding: 10px;
+    font-family: Consolas, monaco, monospace;
+  }
+  button{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 }
 </style>
