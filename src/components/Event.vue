@@ -47,6 +47,9 @@ div.button {
   /* padding-bottom: 1rem; */
 }
 button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -86,7 +89,7 @@ button:active {
   border-bottom-left-radius: 0px;
   padding-left: 1px;
   padding-right: 0;
-  height: 2.1rem;
+  /* height: 2.1rem; */
   margin-left: 0;
   min-width: 35%;
 }
