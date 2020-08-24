@@ -108,9 +108,9 @@ img.nav {
   position: relative;
   top: 1rem;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 900px) {
   #app {
-    width: 33%;
+    width: 50%;
     margin: 0 auto;
     top: 0;
     transition: 0.3s ease-in-out;
@@ -118,6 +118,7 @@ img.nav {
   }
   #app.frontpage {
     top: 50%;
+    margin-top: 10%;
     transition: 0.3s ease-in-out;
   }
   #nav {
@@ -145,17 +146,13 @@ img.nav {
     font-family: Consolas, monaco, monospace;
   }
 }
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1200px) {
   #app {
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
     top: 0;
     transition: 0.3s ease-in-out;
     padding-left: calc(100vw - 100%);
-  }
-  #app.frontpage {
-    top: 50%;
-    transition: 0.3s ease-in-out;
   }
   #nav {
     font-size: 18px;
