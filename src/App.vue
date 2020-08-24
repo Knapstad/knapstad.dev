@@ -24,6 +24,16 @@
   </div>
 </template>
 <script>
+document.documentElement.style.setProperty('--screen-width', window.innerWidth);
+
+window.addEventListener('resize', function() {
+  document.documentElement.style.setProperty(
+    '--screen-width',
+    '' + (100 + (900 - window.innerWidth) * 0.12) + '%',
+  );
+  console.log('resize');
+});
+
 export default {};
 </script>
 <style>
@@ -37,7 +47,7 @@ html {
   flex: 50%;
 }
 #app {
-  width: 100%;
+  width: calc(100% - 3px);
   height: auto;
   position: relative;
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -110,7 +120,8 @@ img.nav {
 }
 @media only screen and (min-width: 900px) {
   #app {
-    width: 50%;
+    width: var(--screen-width);
+    min-width: 650px;
     margin: 0 auto;
     top: 0;
     transition: 0.3s ease-in-out;
@@ -146,9 +157,10 @@ img.nav {
     font-family: Consolas, monaco, monospace;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1300px) {
   #app {
     width: 40%;
+    min-width: 650px;
     margin: 0 auto;
     top: 0;
     transition: 0.3s ease-in-out;
