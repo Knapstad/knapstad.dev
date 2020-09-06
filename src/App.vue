@@ -108,6 +108,10 @@ img.external {
 section {
   text-align: left;
 }
+pre {
+  overflow-x: auto;
+  background: lightgrey;
+}
 .content {
   text-align: left;
 }
