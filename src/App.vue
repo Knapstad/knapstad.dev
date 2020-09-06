@@ -26,7 +26,7 @@
 <script>
 document.documentElement.style.setProperty('--screen-width', window.innerWidth);
 
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
   document.documentElement.style.setProperty(
     '--screen-width',
     '' + (100 + (900 - window.innerWidth) * 0.12) + '%',
