@@ -26,7 +26,7 @@
 <script>
 document.documentElement.style.setProperty('--screen-width', window.innerWidth);
 
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
   document.documentElement.style.setProperty(
     '--screen-width',
     '' + (100 + (900 - window.innerWidth) * 0.12) + '%',
@@ -107,6 +107,10 @@ img.external {
 }
 section {
   text-align: left;
+}
+pre {
+  overflow-x: auto;
+  background: lightgrey;
 }
 .content {
   text-align: left;
