@@ -1,8 +1,14 @@
 const articles = require('../assets/articles/articles.json');
-
+const projects = require('../assets/projects/projects.json');
 const posts = articles.map(child => ({
-  path: `/articles/${child.path}`,
-  name: child.path,
+  path: child.path,
+  name: child.name,
+  component: () => import(`@/views/Blogg.vue`),
+  props: { data: child },
+}));
+const projec = projects.map(child => ({
+  path: child.path,
+  name: child.name,
   component: () => import(`@/views/Blogg.vue`),
   props: { data: child },
 }));
@@ -46,7 +52,13 @@ module.exports = [
     name: 'articles',
     component: () => import('@/views/Articles.vue'),
   },
+  {
+    path: '/projects',
+    name: 'projects',
+    component: () => import('@/views/Projects.vue'),
+  },
   ...posts,
+  ...projec,
   {
     path: '/*',
     name: '404',
