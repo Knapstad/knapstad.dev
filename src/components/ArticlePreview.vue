@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link :to="`articles/` + article.path" class="cardlink">
+    <router-link :to="article.path" class="cardlink">
       <div class="cardbg">
         <h2>{{ article.title | capitalize }}</h2>
         <p class="date">Created on: {{ article.date }}</p>
