@@ -16,10 +16,15 @@ export default {
   },
   computed: {
     componentFile() {
-      return () => import(`@/assets/articles/${this.data.path}.md`);
+      return () => import(`@/assets${this.data.path}.md`);
     },
   },
 };
 </script>
 
-<style></style>
+<style>
+h1 a {
+  text-decoration: none;
+  color: black;
+}
+</style>
