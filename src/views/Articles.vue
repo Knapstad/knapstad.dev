@@ -8,7 +8,7 @@
 
 <script>
 import ArticlePreview from '@/components/ArticlePreview.vue';
-import articles from '@/assets/Atricles/articles.json';
+import articles from '@/assets/articles/articles.json';
 
 export default {
   name: 'Articles',

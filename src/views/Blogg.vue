@@ -16,7 +16,7 @@ export default {
   },
   computed: {
     componentFile() {
-      return () => import(`@/assets/Atricles/${this.data.path}.md`);
+      return () => import(`@/assets/articles/${this.data.path}.md`);
     },
   },
 };

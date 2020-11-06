@@ -1,4 +1,4 @@
-const articles = require('../assets/Atricles/articles.json');
+const articles = require('../assets/articles/articles.json');
 
 const posts = articles.map(child => ({
   path: `/articles/${child.path}`,

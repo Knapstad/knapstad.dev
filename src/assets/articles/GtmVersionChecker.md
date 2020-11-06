@@ -177,7 +177,7 @@ The function to execute is main.
 
 In the advanced section set the location to the same as you set for your bucket
 
-Click create and your function is done.src\assets\Atricles\gtmversionckerimg
+Click create and your function is done.src\assets\articles\gtmversionckerimg
 
 ![Screen shoot of the terminal with function showing as ok](./gtmversioncheckerimg/function-ok.png)
 
