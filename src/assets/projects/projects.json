@@ -1,0 +1,19 @@
+[
+    {
+      "id": 1,
+      "title": "Bilabonnement.app - a site to compare car subscription prices",
+      "description": "A Norwegian site made with vue to compare car subscription prices",
+      "path": "/projects/bilabonnement",
+      "name": "bilabonnement",
+      "date": "06-11-2020"
+    },
+    {
+      "id": 2,
+      "title": "Scrapestad -  A SEO-scraper made in Python",
+      "description": "My hobby project in python, making a small SEO-scraper in python",
+      "path": "/projects/scrapestad",
+      "name": "scrapestad",
+      "date": "14-08-2020"
+    }
+  ]
+  
