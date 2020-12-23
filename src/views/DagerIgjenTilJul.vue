@@ -22,7 +22,7 @@ export default {
       meta: [
         {
           name: 'description',
-          content: `Lurer du på hvor mange dager det er til jul? Det er ${this.days} til jul`,
+          content: `Lurer du på hvor mange dager det er til jul? Det er ${this.days} dager til jul`,
         },
       ],
     };
