@@ -1,6 +1,12 @@
 <template>
   <div v-if="date === 'day'" class="counter">
-    <div v-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 50">
+    <div v-if="today == '12/23/2020'">
+      <p>Nå er det lille julaften! Husk å se Gevinnen og hovmesteren</p>
+    </div>
+    <div v-else-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 0">
+      <p>Nå er det jul!</p>
+    </div>
+    <div v-else-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 50">
       <p>Oj oj oj nå er det ikke lenge igjen til jul!</p>
       <p>
         Det er bare <strong>{{ days }}</strong> dager igjen!
@@ -13,7 +19,22 @@
     </div>
   </div>
   <div v-else-if="date === 'week'" class="counter">
-    <div v-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 50">
+    <div v-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 0">
+      <p>Nå er det jul!</p>
+    </div>
+    <div v-else-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 7">
+      <p>Oj oj oj nå er det ikke lenge igjen til jul!</p>
+      <p>
+        Vi er inne i juleuka!
+      </p>
+    </div>
+    <div v-else-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 7">
+      <p>Oj oj oj nå er det ikke lenge igjen til jul!</p>
+      <p>
+        Vi er inne i juleuka!
+      </p>
+    </div>
+    <div v-else-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 50">
       <p>Oj oj oj nå er det ikke lenge igjen til jul!</p>
       <p>
         Det er bare <strong>{{ weeks }}</strong> uker igjen!
@@ -32,8 +53,10 @@
 export default {
   data() {
     return {
-      days: (this.returnDateJson('12/24/2020').days / 1) >> 0,
-      weeks: (this.returnDateJson('12/24/2020').weeks / 1) >> 0,
+      thisYear: new Date().getFullYear(),
+      days: (this.returnDateJson(`12/24/` + this.thisYear).days / 1) >> 0,
+      weeks: (this.returnDateJson('12/24/' + this.thisYear).weeks / 1) >> 0,
+      today: new Date().toLocaleDateString(),
     };
   },
   mounted: function() {
