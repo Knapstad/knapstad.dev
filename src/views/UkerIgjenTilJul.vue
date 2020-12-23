@@ -22,7 +22,7 @@ export default {
       meta: [
         {
           name: 'description',
-          content: `Lurer du på hvor mange dager det er til jul? Det er ${this.weeks} til jul`,
+          content: `Lurer du på hvor mange dager det er til jul? Det er ${this.weeks} uker til jul`,
         },
       ],
     };
@@ -38,7 +38,7 @@ export default {
     return {
       days: '',
       weeks: '',
-      description: 'Det er ' + this.weeks + 'igjen til jul',
+      // description: 'Det er ' + this.weeks + 'igjen til jul',
       title: '',
     };
   },
