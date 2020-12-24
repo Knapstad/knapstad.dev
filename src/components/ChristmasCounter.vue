@@ -3,10 +3,10 @@
     <div v-if="today == '12/23/2020'">
       <p>Nå er det lille julaften! Husk å se Gevinnen og hovmesteren</p>
     </div>
-    <div v-else-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 0">
+    <div v-else-if="Date(today) <= Date('12/24/' + thisYear)">
       <p>Nå er det jul!</p>
     </div>
-    <div v-else-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 50">
+    <div v-else-if="days < 50">
       <p>Oj oj oj nå er det ikke lenge igjen til jul!</p>
       <p>
         Det er bare <strong>{{ days }}</strong> dager igjen!
@@ -19,22 +19,22 @@
     </div>
   </div>
   <div v-else-if="date === 'week'" class="counter">
-    <div v-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 0">
+    <div v-if="Date(today) <= Date('12/24/' + thisYear)">
       <p>Nå er det jul!</p>
     </div>
-    <div v-else-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 7">
+    <div v-else-if="days < 7">
       <p>Oj oj oj nå er det ikke lenge igjen til jul!</p>
       <p>
         Vi er inne i juleuka!
       </p>
     </div>
-    <div v-else-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 7">
+    <div v-else-if="days < 7">
       <p>Oj oj oj nå er det ikke lenge igjen til jul!</p>
       <p>
         Vi er inne i juleuka!
       </p>
     </div>
-    <div v-else-if="(returnDateJson('12/24/2020').days / 1) >> 0 < 50">
+    <div v-else-if="days < 50">
       <p>Oj oj oj nå er det ikke lenge igjen til jul!</p>
       <p>
         Det er bare <strong>{{ weeks }}</strong> uker igjen!
