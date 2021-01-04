@@ -1,9 +1,9 @@
 <template>
   <div v-if="date === 'day'" class="counter">
-    <div v-if="today == '12/23/2020'">
+    <div v-if="today == '12/23/' + thisYear">
       <p>Nå er det lille julaften! Husk å se Gevinnen og hovmesteren</p>
     </div>
-    <div v-else-if="Date(today) <= Date('12/24/' + thisYear)">
+    <div v-else-if="Date(today) >= new Date('12/24/' + thisYear)">
       <p>Nå er det jul!</p>
     </div>
     <div v-else-if="days < 50">
@@ -19,7 +19,7 @@
     </div>
   </div>
   <div v-else-if="date === 'week'" class="counter">
-    <div v-if="Date(today) <= Date('12/24/' + thisYear)">
+    <div v-if="Date(today) <= new Date('12/24/' + thisYear)">
       <p>Nå er det jul!</p>
     </div>
     <div v-else-if="days < 7">
@@ -52,27 +52,26 @@
 <script>
 export default {
   data() {
+    let thisYear = new Date().getFullYear();
     return {
-      thisYear: new Date().getFullYear(),
-      days: (this.returnDateJson(`12/24/` + this.thisYear).days / 1) >> 0,
-      weeks: (this.returnDateJson('12/24/' + this.thisYear).weeks / 1) >> 0,
+      thisYear: thisYear,
       today: new Date().toLocaleDateString(),
+      days: (this.returnDateJson(`12/24/` + thisYear).days / 1) >> 0,
+      weeks: (this.returnDateJson('12/24/' + thisYear).weeks / 1) >> 0,
     };
   },
   mounted: function() {
-    console.log('joda');
+    // console.log('joda');
     this.$nextTick(function() {
       this.$emit('dateObject', { days: this.days, weeks: this.weeks });
     });
   },
   methods: {
     returnDateJson: function(date) {
+      console.log(date);
       let today = new Date();
       let calcDate = new Date(date);
       let difference = calcDate.getTime() - today.getTime();
-      if (difference < 0) {
-        return -1;
-      }
       let dateObject = {
         days: difference / (1000 * 60 * 60 * 24),
         weeks: difference / (1000 * 60 * 60 * 24) / 7,
