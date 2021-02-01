@@ -28,12 +28,6 @@
         Vi er inne i juleuka!
       </p>
     </div>
-    <div v-else-if="days < 7">
-      <p>Oj oj oj nå er det ikke lenge igjen til jul!</p>
-      <p>
-        Vi er inne i juleuka!
-      </p>
-    </div>
     <div v-else-if="days < 50">
       <p>Oj oj oj nå er det ikke lenge igjen til jul!</p>
       <p>
