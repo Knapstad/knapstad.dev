@@ -14,5 +14,13 @@
     "path": "/articles/AddingARecordsOnNetlify",
     "name": "AddingARecordsOnNetlify",
     "date": "14-08-2020"
+  },
+  {
+    "id": 3,
+    "title": "How make a link-serializer for Sanity in Vue",
+    "description": "This is how you make a Serializer for external links with Sanity ande vue",
+    "path": "/articles/MakingAExternalLinkSerialiserForSanityInVue",
+    "name": "MakingAExternalLinkSerialiserForSanityInVue.md",
+    "date": "09-07-2021"
   }
 ]

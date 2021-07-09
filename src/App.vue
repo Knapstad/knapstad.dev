@@ -112,7 +112,7 @@ section {
 }
 pre {
   overflow-x: auto;
-  background: lightgrey;
+  background: #eee;
 }
 .content {
   text-align: left;
@@ -157,10 +157,15 @@ img.nav {
   }
   code {
     background-color: #eee;
-    border: 0.1px solid #999;
+    /* border: 0.1px solid #999; */
     display: block;
     padding: 10px;
     font-family: Consolas, monaco, monospace;
+    overflow-wrap: break-word;
+  }
+  pre {
+    color: eee;
+    overflow-wrap: break-word;
   }
 }
 @media only screen and (min-width: 1300px) {
@@ -191,10 +196,14 @@ img.nav {
   }
   code {
     background-color: #eee;
-    border: 0.1px solid #999;
+    /* border: 0.1px solid #999; */
     display: block;
     padding: 10px;
     font-family: Consolas, monaco, monospace;
+    overflow-wrap: break-word;
+  }
+  pre {
+    overflow-wrap: break-word;
   }
   button {
     -webkit-appearance: none;
