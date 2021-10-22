@@ -20,17 +20,6 @@ Vue.use(VueHighlightJS, {
     vue,
   },
 });
-Vue.use(VueGtm, {
-  id: 'GTM-MB4G868',
-  queryParams: {
-    // Add url query string when load gtm.js with GTM ID (optional)
-  },
-  enabled: true,
-  debug: true,
-  loadScript: true,
-  vueRouter: router,
-  ignoredViews: [],
-});
 
 Vue.filter('capitalize', value => {
   if (!value) return '';
