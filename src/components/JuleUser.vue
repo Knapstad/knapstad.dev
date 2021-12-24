@@ -24,6 +24,7 @@
         <div class="edit" data-v-344f7ac2>
           <p data-v-344f7ac2>
             <button
+              class="point"
               @click="
                 addgave(user);
                 $emit('update', user);
@@ -31,10 +32,11 @@
             >
               Ny gave
             </button>
-            <button @click="removegave(user)">Slett gave</button>
+            <button class="point" @click="removegave(user)">Slett gave</button>
           </p>
           <p data-v-344f7ac2>
             <button
+              class="point"
               @click="
                 addhalvtpoeng(user);
                 $emit('update', user);
@@ -43,6 +45,7 @@
               + 0.5
             </button>
             <button
+              class="point"
               @click="
                 addpoeng(user);
                 $emit('update', user);
@@ -51,6 +54,7 @@
               + 1
             </button>
             <button
+              class="point"
               @click="
                 removehalvtpoeng(user);
                 $emit('update', user);
@@ -59,6 +63,7 @@
               - 0.5
             </button>
             <button
+              class="point"
               @click="
                 removepoeng(user);
                 $emit('update', user);
@@ -187,6 +192,9 @@ button {
   text-align: center;
   position: relative;
   justify-content: left;
+}
+button.point {
+  padding: 2px;
 }
 button:hover {
   border-color: #7a7a7a;
