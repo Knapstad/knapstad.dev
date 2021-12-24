@@ -24,10 +24,13 @@
         <div class="edit" data-v-344f7ac2>
           <p data-v-344f7ac2>
             <button @click="addgave(user)">Ny gave</button>
+            <button @click="removegave(user)">Slett gave</button>
           </p>
           <p data-v-344f7ac2>
             <button @click="addhalvtpoeng(user)">+ 0.5</button>
             <button @click="addpoeng(user)">+ 1</button>
+            <button @click="removehalvtpoeng(user)">- 0.5</button>
+            <button @click="removepoeng(user)">- 1</button>
           </p>
         </div>
       </div>
@@ -51,11 +54,20 @@ export default {
     addgave: function(user) {
       user.number++;
     },
+    removegave: function(user) {
+      user.number--;
+    },
     addpoeng: function(user) {
       user.points++;
     },
+    removepoeng: function(user) {
+      user.points--;
+    },
     addhalvtpoeng: function(user) {
       user.points = user.points + 0.5;
+    },
+    removehalvtpoeng: function(user) {
+      user.points = user.points - 0.5;
     },
   },
 };
@@ -112,6 +124,7 @@ div.nameheader[data-v-344f7ac2] {
   height: 2rem;
   line-height: 2rem;
   font-size: 1.5rem;
+  max-width: 100%;
 }
 button {
   -webkit-appearance: none;
