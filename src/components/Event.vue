@@ -9,7 +9,11 @@
       </form>
     </div>
     <div v-for="user in group" :key="user.name" class="noclass">
-      <Juleuser v-bind:user="user" @removeuser="$emit('removeuser', $event)" />
+      <Juleuser
+        v-bind:user="user"
+        @removeuser="$emit('removeuser', $event)"
+        @update="$emit('update', $event)"
+      />
     </div>
   </div>
 </template>

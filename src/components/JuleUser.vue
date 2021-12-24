@@ -23,14 +23,49 @@
       <div class="column">
         <div class="edit" data-v-344f7ac2>
           <p data-v-344f7ac2>
-            <button @click="addgave(user)">Ny gave</button>
+            <button
+              @click="
+                addgave(user);
+                $emit('update', user);
+              "
+            >
+              Ny gave
+            </button>
             <button @click="removegave(user)">Slett gave</button>
           </p>
           <p data-v-344f7ac2>
-            <button @click="addhalvtpoeng(user)">+ 0.5</button>
-            <button @click="addpoeng(user)">+ 1</button>
-            <button @click="removehalvtpoeng(user)">- 0.5</button>
-            <button @click="removepoeng(user)">- 1</button>
+            <button
+              @click="
+                addhalvtpoeng(user);
+                $emit('update', user);
+              "
+            >
+              + 0.5
+            </button>
+            <button
+              @click="
+                addpoeng(user);
+                $emit('update', user);
+              "
+            >
+              + 1
+            </button>
+            <button
+              @click="
+                removehalvtpoeng(user);
+                $emit('update', user);
+              "
+            >
+              - 0.5
+            </button>
+            <button
+              @click="
+                removepoeng(user);
+                $emit('update', user);
+              "
+            >
+              - 1
+            </button>
           </p>
         </div>
       </div>
@@ -53,21 +88,28 @@ export default {
     },
     addgave: function(user) {
       user.number++;
+      // $emit('update', user);
+      // window.localStorage.setItem('juledata', JSON.stringify(folk));
     },
     removegave: function(user) {
       user.number--;
+      // window.localStorage.setItem('juledata', JSON.stringify(folk));
     },
     addpoeng: function(user) {
       user.points++;
+      // window.localStorage.setItem('juledata', JSON.stringify(folk));
     },
     removepoeng: function(user) {
       user.points--;
+      // window.localStorage.setItem('juledata', JSON.stringify(folk));
     },
     addhalvtpoeng: function(user) {
       user.points = user.points + 0.5;
+      // window.localStorage.setItem('juledata', JSON.stringify(folk));
     },
     removehalvtpoeng: function(user) {
       user.points = user.points - 0.5;
+      // window.localStorage.setItem('juledata', JSON.stringify(folk));
     },
   },
 };
