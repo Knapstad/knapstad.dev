@@ -28,7 +28,7 @@
     "title": "How to run a scheduled query when the Google Analytics table is updated in BigQuery",
     "description": "This is how you run a scheduled query when the Google Analytics table is updated in BigQuery",
     "path": "/articles/HowToRunAScheduledQueryWhenGaTableIsUpdatedInBigQuery",
-    "name": "MakingAExternalLinkSerialiserForSanityInVue.md",
+    "name": "HowToRunAScheduledQueryWhenGaTableIsUpdatedInBigQuery.md",
     "date": "01-01-2022"
   }
 ]
