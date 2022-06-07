@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "The GTM version checker - for Google Cloud, Slack and Microsoft Teams",
+    "description": "This article wil show you how to integrate Google Tag Manager changes with Microsoft Teams and Slack",
+    "path": "/articles/GtmVersionChecker",
+    "name": "GtmVersionChecker",
+    "date": "05-05-2020"
+  },
+  {
+    "id": 2,
+    "title": "Adding A and AAA Records on Netlify",
+    "description": "If you have tried adding A and AAAA records on Netlify you might have stumbled on to some problems. I had to add some A and AAAA records to my netlify site to levrage the serverside taging in google analytics. And i encountered this error message: dns_api knapstad.dev - collect.knapstad.dev/A: 400 - link exists, all config must be empty",
+    "path": "/articles/AddingARecordsOnNetlify",
+    "name": "AddingARecordsOnNetlify",
+    "date": "14-08-2020"
+  },
+  {
+    "id": 3,
+    "title": "How make a link-serializer for Sanity in Vue",
+    "description": "This is how you make a Serializer for external links with Sanity ande vue",
+    "path": "/articles/MakingAExternalLinkSerialiserForSanityInVue",
+    "name": "MakingAExternalLinkSerialiserForSanityInVue.md",
+    "date": "09-07-2021"
+  }
+  {
+    "id": 4,
+    "title": "How to run a scheduled query when the Google Analytics table is updated in BigQuery",
+    "description": "This is how you run a scheduled query when the Google Analytics table is updated in BigQuery",
+    "path": "/articles/HowToRunAScheduledQueryWhenGaTableIsUpdatedInBigQuery",
+    "name": "MakingAExternalLinkSerialiserForSanityInVue.md",
+    "date": "01-01-2022"
+  }
+]
