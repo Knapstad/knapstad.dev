@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "The GTM version checker - for Google Cloud, Slack and Microsoft Teams",
-    "description": "This article wil show you how to integrate Google Tag Manager changes with Microsoft Teams and Slack",
+    "description": "This article will show you how to integrate Google Tag Manager changes with Microsoft Teams and Slack",
     "path": "/articles/GtmVersionChecker",
     "name": "GtmVersionChecker",
     "date": "05-05-2020"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "title": "How make a link-serializer for Sanity in Vue",
-    "description": "This is how you make a Serializer for external links with Sanity ande vue",
+    "description": "This is how you make a Serializer for external links with Sanity and vue",
     "path": "/articles/MakingAExternalLinkSerialiserForSanityInVue",
     "name": "MakingAExternalLinkSerialiserForSanityInVue.md",
     "date": "09-07-2021"
