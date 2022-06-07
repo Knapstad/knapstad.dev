@@ -52,10 +52,10 @@ export default {
 
 If you look inside 'marks' you will find 'annotations', this is where the link type lives.
 And this is the one we would like to change to get the "open in a new window" functionality.
-We need to add an attribute to the objevct and we do this in the feilds-array.
-The new feild needs a title, a name and a type. The title is what is displayed in the sanity studio.
-And the name is the key used in the portable text. So well add 'Open in new window' as the title and'newtab' as the name.
-As for the type we'll set 'boolean' this gives the user a toggle to set when adding the url. This is what our new feild looks like.
+We need to add an attribute to the object and we do this in the fields-array.
+The new field needs a title, a name and a type. The title is what is displayed in the sanity studio.
+And the name is the key used in the portable text. So well add 'Open in new window' as the title and 'newtab' as the name.
+As for the type we'll set 'boolean' this gives the user a toggle to set when adding the url. This is what our new field looks like.
 ```js
 {
   title: 'Open in new window',
@@ -184,4 +184,4 @@ export default {
 }
 </script>
 ```
-That shuld do it.
+That should do it.
