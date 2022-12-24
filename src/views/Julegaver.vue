@@ -4,6 +4,7 @@
       v-bind:group="folk"
       @removeuser="removeuser(folk, $event)"
       @adduser="adduser(folk, $event)"
+      @update="update(folk, $event)"
     />
   </div>
 </template>
@@ -19,9 +20,15 @@ export default {
   methods: {
     adduser: function(folk, navn) {
       folk.push({ name: navn, number: 0, points: 0.0 });
+      window.localStorage.setItem('juledata', JSON.stringify(folk));
     },
     removeuser: function(folk, user) {
       folk.splice(folk.indexOf(user), 1);
+      window.localStorage.setItem('juledata', JSON.stringify(folk));
+    },
+    update: function(folk, user) {
+      folk[folk.indexOf(user)] = user;
+      window.localStorage.setItem('juledata', JSON.stringify(folk));
     },
   },
   metaInfo() {
@@ -40,11 +47,7 @@ export default {
     return {
       user: '',
       name: '',
-      folk: [
-        { name: 'bendik', number: 10, points: 2.0 },
-        { name: 'daniel', number: 12, points: 10.0 },
-        { name: 'Mamma', number: 10, points: 4.0 },
-      ],
+      folk: JSON.parse(window.localStorage.getItem('juledata')) || [],
     };
   },
 };
