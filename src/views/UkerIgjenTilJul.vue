@@ -55,11 +55,37 @@ export default {
       });
     },
     getRandomSnowflake() {
-      const snowflakes = ['❅', '❆', '❄', '✻', '✼', '❇', '❈', '❉', '❊', '❋'];
-      return snowflakes[Math.floor(Math.random() * snowflakes.length)];
+      const baseSnowflakes = ['❅', '❆', '❄', '✻', '✼', '❇', '❈', '❉', '❊', '❋'];
+      const festiveSnowflakes = ['🎄', '🎅', '🎁', '🎀', '🌟'];
+
+      // Shuffle the festiveSnowflakes array
+      for (let i = festiveSnowflakes.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [festiveSnowflakes[i], festiveSnowflakes[j]] = [festiveSnowflakes[j], festiveSnowflakes[i]];
+      }
+    //  #remove baseSnowflakes based on festivity level
+      for (let i = 0; i < this.getFestivityLevel(); i++) {
+        baseSnowflakes.pop();
+      }
+
+      const allSnowflakes = baseSnowflakes.concat(festiveSnowflakes.slice(0, this.getFestivityLevel()));
+      return allSnowflakes[Math.floor(Math.random() * allSnowflakes.length)];
     },
-    getChristmasContainerHeight() {
-      return document.querySelector('.christmas-container').clientHeight;
+    getFestivityLevel() {
+      if (this.days <= 7) {
+        return 10; // All festive emojis
+      } else if (this.days <= 10) {
+        return 7;
+      } else if (this.days <= 15) {
+        return 5; 
+      }else if (this.days <= 20) {
+        return 2;
+      }else if (this.days <= 30) {
+        return 1; 
+      }
+      else {
+        return 0; // Only base snowflakes
+      }
     },
   },
   data() {
@@ -151,7 +177,7 @@ export default {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(var(--christmas-container-height,400px));
+    transform: translateY(var(--christmas-container-height,400px)) rotate(360deg);
   }
 }
 </style>
