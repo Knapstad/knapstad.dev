@@ -87,7 +87,6 @@ export default {
   color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  width: 98%;
   padding: 1rem;
   margin: 1rem 0;
   font-family: 'Comic Sans MS', cursive, sans-serif;
