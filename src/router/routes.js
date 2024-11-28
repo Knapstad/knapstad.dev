@@ -1,5 +1,6 @@
 const articles = require('../assets/articles/articles.json');
 const projects = require('../assets/projects/projects.json');
+/* eslint-disable */
 const posts = articles.map(child => ({
   path: child.path,
   name: child.name,

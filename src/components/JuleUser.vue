@@ -85,6 +85,7 @@
 
 <script>
 export default {
+   /* eslint-disable */
   name: 'Juleuser',
   props: ['user'],
   methods: {

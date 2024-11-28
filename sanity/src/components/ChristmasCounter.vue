@@ -45,6 +45,7 @@
 
 <script>
 export default {
+   /* eslint-disable */
   data() {
     let thisYear = new Date().getFullYear();
     return {

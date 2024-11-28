@@ -9,60 +9,27 @@
     "sitemap": "vue-cli-service sitemap"
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0",
+    "core-js": "^3.39.0",
     "highlight.js": "^9.18.5",
     "html-loader": "^1.3.2",
-    "vue": "^2.6.12",
+    "vue": "^2.7.16",
     "vue-gtm": "^2.3.4",
-    "vue-highlight": "0.0.0",
     "vue-highlight.js": "^3.1.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "core-js": "^3.15.2",
-    "html-loader": "^1.1.0",
-    "vue": "^2.6.14",
-    "vue-gtm": "^2.3.0",
     "vue-meta": "^2.4.0",
     "vue-resource": "^1.5.3",
-    "vue-router": "^3.5.2",
-    "vue-showdown": "^3.1.0"
+    "vue-router": "^3.6.5",
+    "vue-showdown": "^3.3.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-eslint": "~4.5.12",
-    "@vue/cli-plugin-babel": "~4.5.13",
-    "@vue/cli-plugin-eslint": "~4.5.13",
-    "@vue/cli-service": "~4.5.13",
     "@vue/cli-plugin-router": "~4.5.13",
-    "@vue/eslint-config-airbnb": "^5.0.2",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-vue": "^7.13.0",
+    "@vue/cli-service": "~4.5.13",
     "markdown-loader": "^6.0.0",
     "md-loader": "^0.1.0",
     "raw-loader": "^4.0.2",
     "vue-cli-plugin-sitemap": "~2.2.0",
     "vue-markdown-highlight": "^1.0.5",
-    "vue-markdown-loader": "^2.4.1",
-    "vue-template-compiler": "^2.6.14"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "@vue/airbnb"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "all"
+    "vue-markdown-loader": "^2.5.0",
+    "vue-template-compiler": "^2.7.16"
   },
   "browserslist": [
     "> 1%",

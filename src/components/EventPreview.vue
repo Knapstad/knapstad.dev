@@ -25,6 +25,7 @@
 
 <script>
 export default {
+   /* eslint-disable */
   name: 'EventPreveiw',
   props: ['event'],
   methods: {

@@ -58,14 +58,12 @@ export default {
     };
   },
   mounted: function() {
-    // console.log('joda');
     this.$nextTick(function() {
       this.$emit('dateObject', { days: this.days, weeks: this.weeks });
     });
   },
   methods: {
     returnDateJson: function(date) {
-      console.log(date);
       let today = new Date();
       let calcDate = new Date(date);
       let difference = calcDate.getTime() - today.getTime();
@@ -80,14 +78,41 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .counter {
-  background: whitesmoke;
-  text-align: center;
-  border-radius: 1px;
-  box-shadow: 2px 2px 5px #000;
-  width: 100%;
-  /* -webkit-margin-after: 1rem; */
-  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #ff0000, #ff6347);
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 98%;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  position: relative;
+}
+
+.counter p {
+  margin: 0.5rem 0;
+  font-size: 1.2em;
+}
+
+.counter strong {
+  font-size: 1.5em;
+  color: #ffd700;
+}
+
+.counter::before {
+  content: '🎄';
+  font-size: 2em;
+  margin-bottom: 0.5rem;
+}
+
+.counter::after {
+  content: '🎅';
+  font-size: 2em;
+  margin-top: 0.5rem;
 }
 </style>

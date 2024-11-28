@@ -20,6 +20,7 @@
 <script>
 import Juleuser from '@/components/JuleUser.vue';
 export default {
+   /* eslint-disable */
   name: 'Group',
   props: ['group'],
   components: {

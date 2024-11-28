@@ -13,13 +13,13 @@ import router from './router';
 
 Vue.config.productionTip = false;
 Vue.use(VueResource);
-Vue.use(VueHighlightJS, {
-  // Register only languages that you want
-  languages: {
-    javascript,
-    vue,
-  },
-});
+// Vue.use(VueHighlightJS, {
+//   // Register only languages that you want
+//   languages: {
+//     javascript,
+//     vue,
+//   },
+// });
 
 Vue.filter('capitalize', value => {
   if (!value) return '';
@@ -28,7 +28,7 @@ Vue.filter('capitalize', value => {
 });
 
 router.afterEach(() => {
-  setTimeout(function() {
+  setTimeout(function () {
     window.dataLayer.push({ event: 'NavigationComplete' });
   }, 1000);
 });

@@ -14,6 +14,7 @@
 
 <script>
 export default {
+   /* eslint-disable */
   name: 'HelloWorld',
   props: {
     msg: String,
