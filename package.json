@@ -21,8 +21,8 @@
     "vue-showdown": "^3.3.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-router": "~4.5.13",
-    "@vue/cli-service": "~4.5.13",
+    "@vue/cli-plugin-router": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
     "markdown-loader": "^6.0.0",
     "md-loader": "^0.1.0",
     "raw-loader": "^4.0.2",
