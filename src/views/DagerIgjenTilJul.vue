@@ -17,7 +17,7 @@
 import ChristmasCounter from '@/components/ChristmasCounter.vue';
 
 export default {
-  name: 'Dager igjen til jul',
+  name: 'Dagerigjentiljul',
   components: {
     ChristmasCounter,
   },

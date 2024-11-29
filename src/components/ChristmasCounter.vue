@@ -53,8 +53,9 @@ export default {
     return {
       thisYear: thisYear,
       today: new Date().toLocaleDateString(),
-      days: (this.returnDateJson(`12/24/` + thisYear).days / 1) >> 0,
-      weeks: (this.returnDateJson('12/24/' + thisYear).weeks / 1) >> 0,
+      days: (this.returnDateJson(`12/24/` + thisYear).days / 1) ,
+      weeks: (this.returnDateJson('12/24/' + thisYear).weeks / 1) ,
+      dates: this.returnDateJson(`12/24/` + thisYear),
     };
   },
   mounted: function() {
@@ -63,13 +64,16 @@ export default {
     });
   },
   methods: {
-    returnDateJson: function(date) {
-      let today = new Date();
-      let calcDate = new Date(date);
-      let difference = calcDate.getTime() - today.getTime();
-      let dateObject = {
-        days: difference / (1000 * 60 * 60 * 24),
-        weeks: difference / (1000 * 60 * 60 * 24) / 7,
+    returnDateJson: (date) => {
+      const today = new Date();
+      const calcDate = new Date(date);
+      const difference = calcDate.getTime() - today.getTime();
+      const dateObject = {
+        today: today,
+        calcDate: calcDate,
+        difference: difference,
+        days: Math.round(difference / (1000 * 60 * 60 * 24),0)+1,
+        weeks: Math.ceil((difference / (1000 * 60 * 60 * 24))/7),
       };
       return dateObject;
     },
