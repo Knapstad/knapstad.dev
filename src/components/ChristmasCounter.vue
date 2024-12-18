@@ -34,7 +34,7 @@
     <div v-else-if="days < 50">
       <p>Oj oj oj nå er det ikke lenge igjen til jul!</p>
       <p>
-        Det er bare <strong class="antall">{{ weeks }}</strong> uker igjen!
+        Det er {{this.days <=6 ? 'under': 'bare'}} <strong class="antall">{{ weeks }}</strong> {{this.weeks <= 1 ? 'uke' : 'uker'}} igjen!
       </p>
     </div>
     <div v-else>
@@ -54,7 +54,7 @@ export default {
       thisYear: thisYear,
       today: new Date().toLocaleDateString(),
       days: (this.returnDateJson(`12/24/ ${thisYear}`).days / 1) ,
-      weeks: (this.returnDateJson(`12/24/ + ${thisYear}`).weeks / 1) ,
+      weeks: (this.returnDateJson(`12/24/ ${thisYear}`).weeks / 1) ,
       dates: this.returnDateJson(`12/24/ ${thisYear}`),
     };
   },
@@ -73,7 +73,9 @@ export default {
         calcDate: calcDate,
         difference: difference,
         days: Math.round(difference / (1000 * 60 * 60 * 24),0)+1,
+        daysRaw: (difference / (1000 * 60 * 60 * 24))+1,
         weeks: Math.ceil((difference / (1000 * 60 * 60 * 24))/7),
+        weeksRaw: (difference / (1000 * 60 * 60 * 24))/7,
       };
       return dateObject;
     },

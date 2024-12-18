@@ -14,26 +14,26 @@
 </template>
 
 <script>
-import ChristmasCounter from '@/components/ChristmasCounter.vue';
+import ChristmasCounter from "@/components/ChristmasCounter.vue";
 
 export default {
-  name: 'Dager igjen til jul',
-  components: {
-    ChristmasCounter,
-  },
-  mounted() {
-    this.setSnowflakeStyles();
-  },
-  methods: {
+	name: "Dager igjen til jul",
+	components: {
+		ChristmasCounter,
+	},
+	mounted() {
+		this.setSnowflakeStyles();
+	},
+	methods: {
     getData(data) {
       this.days = data.days;
       this.weeks = data.weeks;
-      this.title = 'Knapstad.dev - ' + this.days + ' Dager Igjen Til Jul';
+      this.title = `Knapstad.dev - ${this.days} Dager Igjen Til Jul`;
     },
     setSnowflakeStyles() {
       const snowflakesinfront = document.querySelectorAll('.in-front .snowflake');
       const snowflakesbehind = document.querySelectorAll('.behind .snowflake');
-      snowflakesinfront.forEach(snowflake => {
+      for(const snowflake of snowflakesinfront){
         const randomLeft = Math.random() * 100;
         const randomDuration = Math.random() * 5 +5;
         const randomDelay = Math.random() * 10;
@@ -42,8 +42,8 @@ export default {
         snowflake.style.animationDuration = `${randomDuration}s`;
         snowflake.style.animationDelay = `${randomDelay}s`;
         snowflake.style.fontSize = `${randomSize}em`;
-      });
-      snowflakesbehind.forEach(snowflake => {
+      };
+      for(const snowflake of snowflakesbehind) {
         const randomLeft = Math.random() * 100;
         const randomDuration = Math.random() * 5 +7;
         const randomDelay = Math.random() * 10;
@@ -52,11 +52,11 @@ export default {
         snowflake.style.animationDuration = `${randomDuration}s`;
         snowflake.style.animationDelay = `${randomDelay}s`;
         snowflake.style.fontSize = `${randomSize}em`;
-      });
+      };
     },
     getRandomSnowflake() {
       const baseSnowflakes = ['❅', '❆', '❄', '✻', '✼', '❇', '❈', '❉', '❊', '❋'];
-      const festiveSnowflakes = ['🎄', '🎅', '🎁', '🎀', '🌟'];
+      const festiveSnowflakes = ['🎄', '🎅', '🎁', '🎀', '🌟','🤶','⛄','🍪','🧑‍🎄','👼','☃️','🛷'];
 
       // Shuffle the festiveSnowflakes array
       for (let i = festiveSnowflakes.length - 1; i > 0; i--) {
@@ -74,18 +74,22 @@ export default {
     getFestivityLevel() {
       if (this.days <= 7) {
         return 10; // All festive emojis
-      } else if (this.days <= 10) {
+      } if (this.days <= 10) {
         return 7;
-      } else if (this.days <= 15) {
+      }
+      if (this.days <= 15) {
         return 5; 
-      }else if (this.days <= 20) {
+      }
+      if (this.days <= 20) {
         return 2;
-      }else if (this.days <= 30) {
+      }
+      if (this.days <= 30) {
         return 1; 
       }
-      else {
-        return 0; // Only base snowflakes
-      }
+      return 0; // Only base snowflakes
+    },
+    getChristmasContainerHeight() {
+      return document.querySelector('.christmas-container').clientHeight;
     },
   },
   data() {
@@ -93,8 +97,6 @@ export default {
       days: '',
       weeks: '',
       title: '',
-      
-      
     };
   },
 };
