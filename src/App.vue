@@ -26,17 +26,56 @@
   </div>
 </template>
 <script>
-document.documentElement.style.setProperty('--screen-width', window.innerWidth);
+const SCREEN_WIDTH_VARIABLE = '--screen-width';
+const DESKTOP_BREAKPOINT = 900;
+const ADJUSTMENT_FACTOR = 0.12;
+const MIN_WIDTH_PERCENT = 60;
+const MAX_WIDTH_PERCENT = 100;
 
-window.addEventListener('resize', function() {
-  document.documentElement.style.setProperty(
-    '--screen-width',
-    '' + (100 + (900 - window.innerWidth) * 0.12) + '%',
-  );
-  console.log('resize');
-});
+export default {
+  name: 'AppRoot',
+  data() {
+    return {
+      resizeHandler: null,
+    };
+  },
+  mounted() {
+    if (typeof window === 'undefined') {
+      return;
+    }
 
-export default {};
+    this.updateScreenWidth();
+    this.resizeHandler = () => this.updateScreenWidth();
+    window.addEventListener('resize', this.resizeHandler);
+  },
+  beforeDestroy() {
+    if (typeof window === 'undefined' || !this.resizeHandler) {
+      return;
+    }
+
+    window.removeEventListener('resize', this.resizeHandler);
+  },
+  methods: {
+    updateScreenWidth() {
+      if (typeof window === 'undefined' || typeof document === 'undefined') {
+        return;
+      }
+
+      const innerWidth = window.innerWidth;
+      const rawWidth =
+        100 + (DESKTOP_BREAKPOINT - innerWidth) * ADJUSTMENT_FACTOR;
+      const normalizedWidth = Math.min(
+        MAX_WIDTH_PERCENT,
+        Math.max(MIN_WIDTH_PERCENT, rawWidth),
+      );
+
+      document.documentElement.style.setProperty(
+        SCREEN_WIDTH_VARIABLE,
+        `${normalizedWidth}%`,
+      );
+    },
+  },
+};
 </script>
 <style>
 html {

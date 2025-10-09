@@ -28,8 +28,15 @@ Vue.filter('capitalize', value => {
 });
 
 router.afterEach(() => {
-  setTimeout(function () {
-    window.dataLayer.push({ event: 'NavigationComplete' });
+  setTimeout(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const { dataLayer } = window;
+    if (Array.isArray(dataLayer)) {
+      dataLayer.push({ event: 'NavigationComplete' });
+    }
   }, 1000);
 });
 
