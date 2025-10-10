@@ -18,7 +18,7 @@
     "vue-meta": "^2.4.0",
     "vue-resource": "^1.5.3",
     "vue-router": "^3.6.5",
-    "vue-showdown": "^3.3.0"
+    "vue-showdown": "^2.4.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-router": "~4.5.13",
