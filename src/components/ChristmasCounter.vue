@@ -65,17 +65,22 @@ export default {
   },
   methods: {
     returnDateJson: (date) => {
+      const MS_IN_DAY = 1000 * 60 * 60 * 24;
       const today = new Date();
       const calcDate = new Date(date);
+      today.setHours(0, 0, 0, 0);
+      calcDate.setHours(0, 0, 0, 0);
       const difference = calcDate.getTime() - today.getTime();
+      const daysRemaining = Math.max(0, Math.ceil(difference / MS_IN_DAY));
+      const weeksRemaining = Math.max(0, Math.floor(difference / (MS_IN_DAY * 7)));
       const dateObject = {
         today: today,
         calcDate: calcDate,
         difference: difference,
-        days: Math.round(difference / (1000 * 60 * 60 * 24),0)+1,
-        daysRaw: (difference / (1000 * 60 * 60 * 24))+1,
-        weeks: Math.ceil((difference / (1000 * 60 * 60 * 24))/7),
-        weeksRaw: (difference / (1000 * 60 * 60 * 24))/7,
+        days: daysRemaining,
+        daysRaw: difference / MS_IN_DAY,
+        weeks: weeksRemaining,
+        weeksRaw: difference / (MS_IN_DAY * 7),
       };
       return dateObject;
     },
