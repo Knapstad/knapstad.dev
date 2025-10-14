@@ -1,6 +1,6 @@
 <template>
   
-  <div class="christmas-container">
+  <div :class="['christmas-container', festivityStageClass]">
     <div class="htmlNoPages">
     <div data-gwd-motion-path-node="x" class="gwd-motion-path-1ud8-anim-x"><div data-gwd-motion-path-node="y" class="gwd-motion-path-1ud8-anim-y"><div data-gwd-motion-path-node="theta" class="gwd-motion-path-1ud8-anim-theta"><img src="../assets/Santa.png" class="gwd-img-1mta gwd-img-13gv gwd-gen-1749gwdanimation" id="nisse_3" style="left: 0px; top: 0px; width: 100%; height: 100%;"></div></div></div>
     <div data-gwd-motion-path-node="x" class="gwd-motion-path-3ytk-anim-x"><div data-gwd-motion-path-node="y" class="gwd-motion-path-3ytk-anim-y"><div data-gwd-motion-path-node="theta" class="gwd-motion-path-3ytk-anim-theta"><img src="../assets/rein1.png" class="gwd-img-1k6m gwd-img-lvaf gwd-gen-18tbgwdanimation" id="rein1_3" style="left: 0px; top: 0px; width: 100%; height: 100%;"></div></div></div>
@@ -9,11 +9,23 @@
     <div data-gwd-motion-path-node="x" class="gwd-motion-path-1lsa-anim-x"><div data-gwd-motion-path-node="y" class="gwd-motion-path-1lsa-anim-y"><div data-gwd-motion-path-node="theta" class="gwd-motion-path-1lsa-anim-theta"><img src="../assets/rein1.png" class="gwd-img-anwp gwd-img-1dzz gwd-gen-1wr1gwdanimation" id="rein1_6" style="left: 0px; top: 0px; width: 100%; height: 100%;"></div></div></div>
     </div>
     <div class="snowflakes behind" aria-hidden="true">
-      <div class="snowflake" v-for="n in 50" :key="'behind-' + n">{{ getRandomSnowflake() }}</div>
+      <div
+        class="snowflake"
+        v-for="n in behindSnowflakeCount"
+        :key="'behind-' + n"
+      >
+        {{ getRandomSnowflake() }}
+      </div>
     </div>
     <ChristmasCounter date="day" @dateObject="getData($event)" />
     <div class="snowflakes in-front" aria-hidden="true">
-      <div class="snowflake" v-for="n in 50" :key="'in-front-' + n">{{ getRandomSnowflake() }}</div>
+      <div
+        class="snowflake"
+        v-for="n in frontSnowflakeCount"
+        :key="'in-front-' + n"
+      >
+        {{ getRandomSnowflake() }}
+      </div>
     </div>
     <router-link to="/ukerigjentiljul">
       <p>Lurer du på hvor mange uker det er til jul?</p>
@@ -27,50 +39,188 @@
 import ChristmasCounter from "@/components/ChristmasCounter.vue";
 
 export default {
-	name: "Dagerigjentiljul",
-	components: {
-		ChristmasCounter,
-	},
-	mounted() {
-		this.setSnowflakeStyles();
-	},
-	methods: {
-		getData(data) {
-			this.days = data.days;
-			this.weeks = data.weeks;
-			this.title = `Knapstad.dev - ${this.days} Dager Igjen Til Jul`;
-		},
-		setSnowflakeStyles() {
-			const snowflakesinfront = document.querySelectorAll(
-				".in-front .snowflake",
-			);
-			const snowflakesbehind = document.querySelectorAll(".behind .snowflake");
-			for (const snowflake of snowflakesinfront) {
-				const randomLeft = Math.random() * 100;
-				const randomDuration = Math.random() * 5 + 5;
-				const randomDelay = Math.random() * 10;
-				const randomSize = Math.random() * 1 + 1;
-				snowflake.style.left = `${randomLeft}%`;
-				snowflake.style.animationDuration = `${randomDuration}s`;
-				snowflake.style.animationDelay = `${randomDelay}s`;
-				snowflake.style.fontSize = `${randomSize}em`;
-			}
-			for (const snowflake of snowflakesbehind) {
-				const randomLeft = Math.random() * 100;
-				const randomDuration = Math.random() * 5 + 7;
-				const randomDelay = Math.random() * 10;
-				const randomSize = Math.random() * 0.5 + 0.5;
-				snowflake.style.left = `${randomLeft}%`;
-				snowflake.style.animationDuration = `${randomDuration}s`;
-				snowflake.style.animationDelay = `${randomDelay}s`;
-				snowflake.style.fontSize = `${randomSize}em`;
-			}
-		},
-		getRandomSnowflake() {
-			const baseSnowflakes = ["❅", "❆", "❄", "✻", "✼", "❇", "❈", "❉", "❊", "❋"];
-			const festiveSnowflakes = [
-				"🎄",
-				"🎅",
+        name: "Dagerigjentiljul",
+        components: {
+                ChristmasCounter,
+        },
+        mounted() {
+                this.$nextTick(() => {
+                        this.setSnowflakeStyles();
+                });
+        },
+        watch: {
+                days() {
+                        this.$nextTick(() => {
+                                this.setSnowflakeStyles();
+                        });
+                },
+                festivityStage() {
+                        this.$nextTick(() => {
+                                this.setSnowflakeStyles();
+                        });
+                },
+        },
+        computed: {
+                festivityStage() {
+                        const dayCount = typeof this.days === "number" ? this.days : Number.MAX_SAFE_INTEGER;
+                        if (dayCount <= 0) {
+                                return "christmas-day";
+                        }
+                        if (dayCount <= 3) {
+                                return "christmas-eve";
+                        }
+                        if (dayCount <= 7) {
+                                return "christmas-week";
+                        }
+                        if (dayCount <= 14) {
+                                return "fortnight";
+                        }
+                        if (dayCount <= 30) {
+                                return "advent";
+                        }
+                        return "early";
+                },
+                festivityStageClass() {
+                        return `festivity-${this.festivityStage}`;
+                },
+                stageSettings() {
+                        const settings = {
+                                early: {
+                                        frontCount: 30,
+                                        behindCount: 20,
+                                        front: {
+                                                duration: [6, 11],
+                                                delay: [0, 10],
+                                                size: [0.9, 1.4],
+                                        },
+                                        behind: {
+                                                duration: [8, 13],
+                                                delay: [0, 12],
+                                                size: [0.4, 0.8],
+                                        },
+                                },
+                                advent: {
+                                        frontCount: 40,
+                                        behindCount: 26,
+                                        front: {
+                                                duration: [5, 10],
+                                                delay: [0, 9],
+                                                size: [1, 1.6],
+                                        },
+                                        behind: {
+                                                duration: [7, 12],
+                                                delay: [0, 11],
+                                                size: [0.5, 0.9],
+                                        },
+                                },
+                                fortnight: {
+                                        frontCount: 55,
+                                        behindCount: 35,
+                                        front: {
+                                                duration: [4.5, 9],
+                                                delay: [0, 8],
+                                                size: [1.1, 1.8],
+                                        },
+                                        behind: {
+                                                duration: [6.5, 11],
+                                                delay: [0, 10],
+                                                size: [0.6, 1],
+                                        },
+                                },
+                                "christmas-week": {
+                                        frontCount: 75,
+                                        behindCount: 45,
+                                        front: {
+                                                duration: [4, 8],
+                                                delay: [0, 7],
+                                                size: [1.2, 2.1],
+                                        },
+                                        behind: {
+                                                duration: [6, 10],
+                                                delay: [0, 9],
+                                                size: [0.7, 1.1],
+                                        },
+                                },
+                                "christmas-eve": {
+                                        frontCount: 90,
+                                        behindCount: 55,
+                                        front: {
+                                                duration: [3.5, 7],
+                                                delay: [0, 6],
+                                                size: [1.3, 2.3],
+                                        },
+                                        behind: {
+                                                duration: [5.5, 9],
+                                                delay: [0, 8],
+                                                size: [0.8, 1.3],
+                                        },
+                                },
+                                "christmas-day": {
+                                        frontCount: 110,
+                                        behindCount: 65,
+                                        front: {
+                                                duration: [3, 6],
+                                                delay: [0, 5],
+                                                size: [1.4, 2.5],
+                                        },
+                                        behind: {
+                                                duration: [5, 8],
+                                                delay: [0, 7],
+                                                size: [0.9, 1.4],
+                                        },
+                                },
+                        };
+                        return settings[this.festivityStage] || settings.early;
+                },
+                frontSnowflakeCount() {
+                        return this.stageSettings.frontCount;
+                },
+                behindSnowflakeCount() {
+                        return this.stageSettings.behindCount;
+                },
+        },
+        methods: {
+                getData(data) {
+                        this.days = data.days;
+                        this.weeks = data.weeks;
+                        this.title = `Knapstad.dev - ${this.days} Dager Igjen Til Jul`;
+                },
+                setSnowflakeStyles() {
+                        if (typeof document === "undefined") {
+                                return;
+                        }
+                        const snowflakesinfront = document.querySelectorAll(
+                                ".in-front .snowflake",
+                        );
+                        const snowflakesbehind = document.querySelectorAll(".behind .snowflake");
+
+                        const frontConfig = this.stageSettings.front;
+                        const behindConfig = this.stageSettings.behind;
+
+                        for (const snowflake of snowflakesinfront) {
+                                const randomLeft = Math.random() * 100;
+                                snowflake.style.left = `${randomLeft}%`;
+                                snowflake.style.animationDuration = `${this.getRandomInRange(frontConfig.duration)}s`;
+                                snowflake.style.animationDelay = `${this.getRandomInRange(frontConfig.delay)}s`;
+                                snowflake.style.fontSize = `${this.getRandomInRange(frontConfig.size)}em`;
+                        }
+                        for (const snowflake of snowflakesbehind) {
+                                const randomLeft = Math.random() * 100;
+                                snowflake.style.left = `${randomLeft}%`;
+                                snowflake.style.animationDuration = `${this.getRandomInRange(behindConfig.duration)}s`;
+                                snowflake.style.animationDelay = `${this.getRandomInRange(behindConfig.delay)}s`;
+                                snowflake.style.fontSize = `${this.getRandomInRange(behindConfig.size)}em`;
+                        }
+                },
+                getRandomInRange(range) {
+                        const [min, max] = range;
+                        return Math.random() * (max - min) + min;
+                },
+                getRandomSnowflake() {
+                        const baseSnowflakes = ["❅", "❆", "❄", "✻", "✼", "❇", "❈", "❉", "❊", "❋"];
+                        const festiveSnowflakes = [
+                                "🎄",
+                                "🎅",
 				"🎁",
 				"🎀",
 				"🌟",
@@ -101,24 +251,25 @@ export default {
 			);
 			return allSnowflakes[Math.floor(Math.random() * allSnowflakes.length)];
 		},
-		getFestivityLevel() {
-			if (this.days <= 7) {
-				return 10; // All festive emojis
-			}
-			if (this.days <= 10) {
-				return 7;
-			}
-			if (this.days <= 15) {
-				return 5;
-			}
-			if (this.days <= 20) {
-				return 2;
-			}
-			if (this.days <= 30) {
-				return 1;
-			}
-			return 0; // Only base snowflakes
-		},
+                getFestivityLevel() {
+                        const dayCount = typeof this.days === "number" ? this.days : Number.MAX_SAFE_INTEGER;
+                        if (dayCount <= 7) {
+                                return 10; // All festive emojis
+                        }
+                        if (dayCount <= 10) {
+                                return 7;
+                        }
+                        if (dayCount <= 15) {
+                                return 5;
+                        }
+                        if (dayCount <= 20) {
+                                return 2;
+                        }
+                        if (dayCount <= 30) {
+                                return 1;
+                        }
+                        return 0; // Only base snowflakes
+                },
 		getChristmasContainerHeight() {
 			return document.querySelector(".christmas-container").clientHeight;
 		},
@@ -135,49 +286,163 @@ export default {
 
 <style scoped>
 .christmas-container {
-  background-color: #008000;
+  --primary-color: #2f4f4f;
+  --accent-color: #2f4f4f;
+  --ornament-opacity: 0;
+  --container-tilt: 0deg;
   font-family: 'Comic Sans MS', cursive, sans-serif;
-  color: #2f4f4f;
+  color: var(--primary-color);
   text-align: center;
-  padding: 20px;
-  border: 5px solid #ff0000;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  border: 2px solid #d3dce6;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #f4f9ff 0%, #ffffff 100%);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 18px 36px -28px rgba(0, 0, 0, 0.45);
+  transform: rotate(var(--container-tilt));
+  transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease,
+    transform 0.6s ease, color 0.6s ease;
+}
+
+.christmas-container::before,
+.christmas-container::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 14px;
+  opacity: var(--ornament-opacity);
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  z-index: 0;
+}
+
+.christmas-container::before {
+  background:
+    radial-gradient(circle at 10% 15%, rgba(220, 20, 60, 0.35), transparent 60%),
+    radial-gradient(circle at 90% 90%, rgba(34, 139, 34, 0.3), transparent 55%);
+}
+
+.christmas-container::after {
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18) 0px,
+    rgba(255, 255, 255, 0.18) 16px,
+    rgba(255, 215, 0, 0.18) 16px,
+    rgba(255, 215, 0, 0.18) 32px
+  );
+  mix-blend-mode: screen;
+}
+
+.christmas-container > * {
+  position: relative;
+  z-index: 1;
 }
 
 .christmas-container p {
-  z-index: 1;
   font-size: 1.5em;
-  color: #ff4500;
-  margin: 20px 0;
+  color: var(--accent-color);
+  margin: 18px 0;
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: color 0.6s ease, text-shadow 0.6s ease;
 }
 
 .christmas-container a {
-  color: #008000;
+  color: var(--accent-color);
   text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.christmas-container h1 {
-  font-size: 3em;
-  color: #ff0000;
-  text-shadow: 2px 2px #ffa500;
+.christmas-container a:hover {
+  color: #ffef96;
+  text-shadow: 0 0 6px rgba(255, 239, 150, 0.7);
 }
 
 .christmas-container button {
-  background-color: #ff0000;
+  background: linear-gradient(135deg, #ff4d4d, #ff9f1c);
   color: #ffffff;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 24px;
   font-size: 1em;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 999px;
   margin-top: 20px;
+  box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.55);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .christmas-container button:hover {
-  background-color: #ffa500;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px -12px rgba(255, 77, 77, 0.55);
+}
+
+.christmas-container.festivity-early {
+  --accent-color: #2f4f4f;
+}
+
+.christmas-container.festivity-advent {
+  background: linear-gradient(180deg, #fff4f4 0%, #fffbea 100%);
+  border-color: #d94f70;
+  --accent-color: #b22222;
+  --ornament-opacity: 0.2;
+  box-shadow: 0 22px 40px -24px rgba(217, 79, 112, 0.55);
+}
+
+.christmas-container.festivity-fortnight {
+  background: radial-gradient(circle at top, #ffeaea 0%, #fff6e6 45%, #f4ffe6 100%);
+  border-color: #2e8b57;
+  --accent-color: #b22222;
+  --ornament-opacity: 0.35;
+  box-shadow: 0 24px 45px -22px rgba(46, 139, 87, 0.5);
+}
+
+.christmas-container.festivity-fortnight p {
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.45);
+}
+
+.christmas-container.festivity-christmas-week {
+  background: linear-gradient(135deg, #d90429 0%, #006400 55%, #ffd54f 100%);
+  border-color: #ffd54f;
+  --primary-color: #ffffff;
+  --accent-color: #fff5d6;
+  --ornament-opacity: 0.55;
+  box-shadow: 0 28px 52px -20px rgba(0, 0, 0, 0.55);
+  animation: festivePulse 6s ease-in-out infinite;
+}
+
+.christmas-container.festivity-christmas-week p {
+  text-shadow: 0 0 14px rgba(255, 245, 214, 0.65);
+}
+
+.christmas-container.festivity-christmas-eve {
+  background: repeating-linear-gradient(45deg, #c40021 0px, #c40021 18px, #ffffff 18px, #ffffff 36px);
+  border-color: #fdd835;
+  --primary-color: #ffffff;
+  --accent-color: #fff8e1;
+  --ornament-opacity: 0.7;
+  --container-tilt: 0.6deg;
+  box-shadow: 0 30px 55px -18px rgba(196, 0, 33, 0.55), 0 0 25px rgba(255, 255, 255, 0.45);
+  animation: festiveSway 4s ease-in-out infinite;
+}
+
+.christmas-container.festivity-christmas-eve p {
+  text-shadow: 0 0 18px rgba(255, 248, 225, 0.7);
+}
+
+.christmas-container.festivity-christmas-day {
+  background: radial-gradient(circle at center, #fff8e1 0%, #ff7043 45%, #8b0000 100%);
+  border-color: #fff8e1;
+  --primary-color: #fffaf5;
+  --accent-color: #fff8dc;
+  --ornament-opacity: 0.9;
+  --container-tilt: -0.4deg;
+  box-shadow: 0 30px 70px -15px rgba(139, 0, 0, 0.65), 0 0 35px rgba(255, 248, 220, 0.65);
+  animation: festiveGlow 5s ease-in-out infinite;
+}
+
+.christmas-container.festivity-christmas-day p {
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 215, 0, 0.45);
 }
 
 .snowflakes {
@@ -187,14 +452,23 @@ export default {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  transition: opacity 0.6s ease;
 }
 
 .snowflakes.behind {
   z-index: 0;
+  opacity: 0.55;
 }
 
 .snowflakes.in-front {
   z-index: 2;
+  opacity: 0.75;
+}
+
+.christmas-container.festivity-christmas-week .snowflakes.in-front,
+.christmas-container.festivity-christmas-eve .snowflakes.in-front,
+.christmas-container.festivity-christmas-day .snowflakes.in-front {
+  opacity: 0.95;
 }
 
 .snowflake {
@@ -204,14 +478,51 @@ export default {
   font-size: 1em;
   user-select: none;
   animation: fall linear infinite;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.18));
 }
 
 @keyframes fall {
   0% {
-    transform: translateY(0);
+    transform: translateY(-10%) rotate(0deg);
   }
   100% {
-    transform: translateY(var(--christmas-container-height,400px)) rotate(360deg);
+    transform: translateY(var(--christmas-container-height, 400px)) rotate(360deg);
+  }
+}
+
+@keyframes festivePulse {
+  0%,
+  100% {
+    transform: rotate(var(--container-tilt)) scale(1);
+    box-shadow: 0 28px 52px -20px rgba(0, 0, 0, 0.55);
+  }
+  50% {
+    transform: rotate(var(--container-tilt)) scale(1.03);
+    box-shadow: 0 32px 60px -18px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@keyframes festiveSway {
+  0%,
+  100% {
+    transform: rotate(0.6deg);
+  }
+  50% {
+    transform: rotate(-0.6deg);
+  }
+}
+
+@keyframes festiveGlow {
+  0%,
+  100% {
+    transform: rotate(-0.4deg) scale(1);
+    box-shadow: 0 30px 70px -15px rgba(139, 0, 0, 0.65),
+      0 0 35px rgba(255, 248, 220, 0.65);
+  }
+  50% {
+    transform: rotate(-0.4deg) scale(1.04);
+    box-shadow: 0 36px 80px -12px rgba(139, 0, 0, 0.55),
+      0 0 45px rgba(255, 248, 220, 0.85);
   }
 }
 
