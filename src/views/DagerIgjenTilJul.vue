@@ -286,52 +286,18 @@ export default {
 
 <style scoped>
 .christmas-container {
-  --primary-color: #2f4f4f;
-  --accent-color: #2f4f4f;
-  --ornament-opacity: 0;
-  --container-tilt: 0deg;
+  background-color: #008000;
   font-family: 'Comic Sans MS', cursive, sans-serif;
-  color: var(--primary-color);
+  color: #2f4f4f;
   text-align: center;
-  padding: 24px;
-  border: 2px solid #d3dce6;
-  border-radius: 18px;
-  background: linear-gradient(180deg, #f4f9ff 0%, #ffffff 100%);
+  padding: 20px;
+  border: 5px solid #ff0000;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 18px 36px -28px rgba(0, 0, 0, 0.45);
-  transform: rotate(var(--container-tilt));
-  transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease,
-    transform 0.6s ease, color 0.6s ease;
-}
-
-.christmas-container::before,
-.christmas-container::after {
-  content: "";
-  position: absolute;
-  inset: 12px;
-  border-radius: 14px;
-  opacity: var(--ornament-opacity);
-  pointer-events: none;
-  transition: opacity 0.6s ease;
-  z-index: 0;
-}
-
-.christmas-container::before {
-  background:
-    radial-gradient(circle at 10% 15%, rgba(220, 20, 60, 0.35), transparent 60%),
-    radial-gradient(circle at 90% 90%, rgba(34, 139, 34, 0.3), transparent 55%);
-}
-
-.christmas-container::after {
-  background: repeating-linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.18) 0px,
-    rgba(255, 255, 255, 0.18) 16px,
-    rgba(255, 215, 0, 0.18) 16px,
-    rgba(255, 215, 0, 0.18) 32px
-  );
-  mix-blend-mode: screen;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 .christmas-container > * {
@@ -341,108 +307,50 @@ export default {
 
 .christmas-container p {
   font-size: 1.5em;
-  color: var(--accent-color);
-  margin: 18px 0;
-  text-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  transition: color 0.6s ease, text-shadow 0.6s ease;
+  color: #ff4500;
+  margin: 20px 0;
 }
 
 .christmas-container a {
-  color: var(--accent-color);
+  color: #008000;
   text-decoration: underline;
   font-weight: 600;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .christmas-container a:hover {
   color: #ffef96;
-  text-shadow: 0 0 6px rgba(255, 239, 150, 0.7);
 }
 
 .christmas-container button {
-  background: linear-gradient(135deg, #ff4d4d, #ff9f1c);
+  background-color: #ff0000;
   color: #ffffff;
   border: none;
-  padding: 10px 24px;
+  padding: 10px 20px;
   font-size: 1em;
   cursor: pointer;
-  border-radius: 999px;
+  border-radius: 5px;
   margin-top: 20px;
-  box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.55);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .christmas-container button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 30px -12px rgba(255, 77, 77, 0.55);
+  background-color: #ffa500;
 }
 
-.christmas-container.festivity-early {
-  --accent-color: #2f4f4f;
+.htmlNoPages {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
 }
 
-.christmas-container.festivity-advent {
-  background: linear-gradient(180deg, #fff4f4 0%, #fffbea 100%);
-  border-color: #d94f70;
-  --accent-color: #b22222;
-  --ornament-opacity: 0.2;
-  box-shadow: 0 22px 40px -24px rgba(217, 79, 112, 0.55);
+.htmlNoPages,
+.htmlNoPages > div {
+  width: 100%;
+  height: 100%;
 }
 
-.christmas-container.festivity-fortnight {
-  background: radial-gradient(circle at top, #ffeaea 0%, #fff6e6 45%, #f4ffe6 100%);
-  border-color: #2e8b57;
-  --accent-color: #b22222;
-  --ornament-opacity: 0.35;
-  box-shadow: 0 24px 45px -22px rgba(46, 139, 87, 0.5);
-}
-
-.christmas-container.festivity-fortnight p {
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.45);
-}
-
-.christmas-container.festivity-christmas-week {
-  background: linear-gradient(135deg, #d90429 0%, #006400 55%, #ffd54f 100%);
-  border-color: #ffd54f;
-  --primary-color: #ffffff;
-  --accent-color: #fff5d6;
-  --ornament-opacity: 0.55;
-  box-shadow: 0 28px 52px -20px rgba(0, 0, 0, 0.55);
-  animation: festivePulse 6s ease-in-out infinite;
-}
-
-.christmas-container.festivity-christmas-week p {
-  text-shadow: 0 0 14px rgba(255, 245, 214, 0.65);
-}
-
-.christmas-container.festivity-christmas-eve {
-  background: repeating-linear-gradient(45deg, #c40021 0px, #c40021 18px, #ffffff 18px, #ffffff 36px);
-  border-color: #fdd835;
-  --primary-color: #ffffff;
-  --accent-color: #fff8e1;
-  --ornament-opacity: 0.7;
-  --container-tilt: 0.6deg;
-  box-shadow: 0 30px 55px -18px rgba(196, 0, 33, 0.55), 0 0 25px rgba(255, 255, 255, 0.45);
-  animation: festiveSway 4s ease-in-out infinite;
-}
-
-.christmas-container.festivity-christmas-eve p {
-  text-shadow: 0 0 18px rgba(255, 248, 225, 0.7);
-}
-
-.christmas-container.festivity-christmas-day {
-  background: radial-gradient(circle at center, #fff8e1 0%, #ff7043 45%, #8b0000 100%);
-  border-color: #fff8e1;
-  --primary-color: #fffaf5;
-  --accent-color: #fff8dc;
-  --ornament-opacity: 0.9;
-  --container-tilt: -0.4deg;
-  box-shadow: 0 30px 70px -15px rgba(139, 0, 0, 0.65), 0 0 35px rgba(255, 248, 220, 0.65);
-  animation: festiveGlow 5s ease-in-out infinite;
-}
-
-.christmas-container.festivity-christmas-day p {
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 215, 0, 0.45);
+.htmlNoPages * {
+  pointer-events: none;
 }
 
 .snowflakes {
@@ -452,7 +360,6 @@ export default {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  transition: opacity 0.6s ease;
 }
 
 .snowflakes.behind {
@@ -461,14 +368,8 @@ export default {
 }
 
 .snowflakes.in-front {
-  z-index: 2;
+  z-index: 4;
   opacity: 0.75;
-}
-
-.christmas-container.festivity-christmas-week .snowflakes.in-front,
-.christmas-container.festivity-christmas-eve .snowflakes.in-front,
-.christmas-container.festivity-christmas-day .snowflakes.in-front {
-  opacity: 0.95;
 }
 
 .snowflake {
@@ -490,108 +391,6 @@ export default {
   }
 }
 
-@keyframes festivePulse {
-  0%,
-  100% {
-    transform: rotate(var(--container-tilt)) scale(1);
-    box-shadow: 0 28px 52px -20px rgba(0, 0, 0, 0.55);
-  }
-  50% {
-    transform: rotate(var(--container-tilt)) scale(1.03);
-    box-shadow: 0 32px 60px -18px rgba(0, 0, 0, 0.6);
-  }
-}
-
-@keyframes festiveSway {
-  0%,
-  100% {
-    transform: rotate(0.6deg);
-  }
-  50% {
-    transform: rotate(-0.6deg);
-  }
-}
-
-@keyframes festiveGlow {
-  0%,
-  100% {
-    transform: rotate(-0.4deg) scale(1);
-    box-shadow: 0 30px 70px -15px rgba(139, 0, 0, 0.65),
-      0 0 35px rgba(255, 248, 220, 0.65);
-  }
-  50% {
-    transform: rotate(-0.4deg) scale(1.04);
-    box-shadow: 0 36px 80px -12px rgba(139, 0, 0, 0.55),
-      0 0 45px rgba(255, 248, 220, 0.85);
-  }
-}
-
-p {
-  margin: 0px;
-}
-h1 {
-  margin: 0px;
-}
-h2 {
-  margin: 0px;
-}
-h3 {
-  margin: 0px;
-}
-
-body2 {
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-}
-body2 {
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  -moz-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  perspective: 1400px;
-  -webkit-perspective: 1400px;
-  -moz-perspective: 1400px;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  background-image: none;
-}
-body2 {
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-}
-.gwd-img-1mta {
-    pointer-events: auto;
-    left: 42.9253px;
-    top: 236.906px;
-    transform: rotateZ(-9.0046deg);
-    -webkit-transform: rotateZ(-9.0046deg);
-    -moz-transform: rotateZ(-9.0046deg);
-    position: absolute;
-}
-.gwd-img-13gv {
-    transform-origin: -2.75522px 30.1286px 0px;
-    -webkit-transform-origin: -2.75522px 30.1286px 0px;
-    -moz-transform-origin: -2.75522px 30.1286px 0px;
-    height: 46.43px;
-}
-.gwd-img-1k6m {
-    width: 46px;
-    height: 46.43px;
-    transform: rotateZ(-16.9472deg);
-    -webkit-transform: rotateZ(-16.9472deg);
-    -moz-transform: rotateZ(-16.9472deg);
-}
-.gwd-img-lvaf {
-    pointer-events: auto;
-    transform-origin: 23px 23.211px;
-    -webkit-transform-origin: 23px 23.211px;
-    -moz-transform-origin: 23px 23.211px;
-    left: 42.9253px;
-    top: 236.906px;
-    position: absolute;
-}
 @keyframes gwd-gen-18tbgwdanimation_gwd-keyframes {
     0% {
         transform: rotateZ(-16.9472deg);
