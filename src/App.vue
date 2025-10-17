@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="{ frontpage: $route.path == '/' }">
+  <div id="app" v-highlightjs :class="{ frontpage: $route.path == '/' }">
     <div id="nav">
       <nav>
         <router-link to="/">

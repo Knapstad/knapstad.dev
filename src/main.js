@@ -1,10 +1,9 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
 import VueGtm from 'vue-gtm';
-import VueHighlightJS from 'vue-highlight.js';
-
+import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
-import vue from 'vue-highlight.js/lib/languages/vue';
+import xml from 'highlight.js/lib/languages/xml';
 
 import 'highlight.js/styles/github.css';
 
@@ -13,13 +12,30 @@ import router from './router';
 
 Vue.config.productionTip = false;
 Vue.use(VueResource);
-// Vue.use(VueHighlightJS, {
-//   // Register only languages that you want
-//   languages: {
-//     javascript,
-//     vue,
-//   },
-// });
+
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('xml', xml);
+hljs.registerLanguage('vue', xml);
+
+const applyHighlighting = el => {
+  if (!el) {
+    return;
+  }
+
+  const blocks = el.querySelectorAll('pre code');
+  blocks.forEach(block => {
+    hljs.highlightElement(block);
+  });
+};
+
+Vue.directive('highlightjs', {
+  inserted(el) {
+    applyHighlighting(el);
+  },
+  componentUpdated(el) {
+    applyHighlighting(el);
+  },
+});
 
 Vue.filter('capitalize', value => {
   if (!value) return '';
