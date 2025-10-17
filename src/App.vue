@@ -1,5 +1,5 @@
 <template>
-  <div id="app" v-highlightjs :class="{ frontpage: $route.path == '/' }">
+  <div id="app" :class="{ frontpage: $route.path == '/' }">
     <div id="nav">
       <nav>
         <router-link to="/">
@@ -21,7 +21,7 @@
       </nav>
     </div>
     <transition name="page">
-      <router-view />
+      <router-view v-highlightjs />
     </transition>
   </div>
 </template>

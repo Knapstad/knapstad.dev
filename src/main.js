@@ -3,7 +3,10 @@ import VueResource from 'vue-resource';
 import VueGtm from 'vue-gtm';
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
+import json from 'highlight.js/lib/languages/json';
+import bash from 'highlight.js/lib/languages/bash';
 import xml from 'highlight.js/lib/languages/xml';
+import vue from 'highlight.js/lib/languages/vue';
 
 import 'highlight.js/styles/github.css';
 
@@ -14,8 +17,11 @@ Vue.config.productionTip = false;
 Vue.use(VueResource);
 
 hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('json', json);
+hljs.registerLanguage('bash', bash);
 hljs.registerLanguage('xml', xml);
-hljs.registerLanguage('vue', xml);
+hljs.registerLanguage('html', xml);
+hljs.registerLanguage('vue', vue);
 
 const applyHighlighting = el => {
   if (!el) {
@@ -24,16 +30,24 @@ const applyHighlighting = el => {
 
   const blocks = el.querySelectorAll('pre code');
   blocks.forEach(block => {
+    block.classList.remove('hljs');
+    block.removeAttribute('data-highlighted');
     hljs.highlightElement(block);
+  });
+};
+
+const scheduleHighlighting = el => {
+  Vue.nextTick(() => {
+    applyHighlighting(el);
   });
 };
 
 Vue.directive('highlightjs', {
   inserted(el) {
-    applyHighlighting(el);
+    scheduleHighlighting(el);
   },
   componentUpdated(el) {
-    applyHighlighting(el);
+    scheduleHighlighting(el);
   },
 });
 
