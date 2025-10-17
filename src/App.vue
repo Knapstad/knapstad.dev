@@ -21,7 +21,7 @@
       </nav>
     </div>
     <transition name="page">
-      <router-view />
+      <router-view v-highlightjs />
     </transition>
   </div>
 </template>
