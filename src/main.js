@@ -6,7 +6,6 @@ import javascript from 'highlight.js/lib/languages/javascript';
 import json from 'highlight.js/lib/languages/json';
 import bash from 'highlight.js/lib/languages/bash';
 import xml from 'highlight.js/lib/languages/xml';
-import vue from 'highlight.js/lib/languages/vue';
 
 import 'highlight.js/styles/github.css';
 
@@ -21,7 +20,7 @@ hljs.registerLanguage('json', json);
 hljs.registerLanguage('bash', bash);
 hljs.registerLanguage('xml', xml);
 hljs.registerLanguage('html', xml);
-hljs.registerLanguage('vue', vue);
+hljs.registerLanguage('vue', xml);
 
 const applyHighlighting = el => {
   if (!el) {
